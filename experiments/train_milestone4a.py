@@ -467,7 +467,7 @@ class Milestone4ATrainer:
                     )
 
                     feas_cat = rec.derived_evaluation.feasibility_category
-                    aborted = rec.derived_evaluation.protocol_aborted
+                    aborted = bool(rec.raw_observation.protocol_abort)
                     eve_info = float(rec.raw_observation.eve_info_gain)
 
                     if aborted:
@@ -492,7 +492,7 @@ class Milestone4ATrainer:
                         "alpha": params.alpha,
                         "beta": params.beta,
                         "qber_test": rec.raw_observation.qber_test,
-                        "wilson_ucb": rec.derived_evaluation.qber_wilson_ucb,
+                        "wilson_ucb": rec.derived_evaluation.wilson_q_ucb,
                         "q_budget": cond.q_budget,
                         "feasibility_category": feas_cat.value,
                         "aborted": aborted,
