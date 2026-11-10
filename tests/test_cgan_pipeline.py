@@ -555,5 +555,30 @@ class TestCommonRandomNumbersInvariance(unittest.TestCase):
         self.assertGreater(diff_large, diff_mid, "Probe(0.25) perturbation must strictly exceed Probe(0.10)")
 
 
+class TestGeneratorDeviceCompatibility(unittest.TestCase):
+    """Verify that PyTorch random Generators are strictly compatible with target device tensors."""
+
+    def test_generator_device_matching_cpu_and_cuda(self):
+        devices = [torch.device("cpu")]
+        if torch.cuda.is_available():
+            devices.append(torch.device("cuda"))
+
+        for dev in devices:
+            gen_a = torch.Generator(device=dev).manual_seed(1042)
+            t_a = torch.randn(8, 16, generator=gen_a, device=dev, dtype=torch.float32)
+            self.assertEqual(t_a.device.type, dev.type)
+            self.assertEqual(t_a.shape, (8, 16))
+
+            # Determinism check with same seed
+            gen_b = torch.Generator(device=dev).manual_seed(1042)
+            t_b = torch.randn(8, 16, generator=gen_b, device=dev, dtype=torch.float32)
+            self.assertTrue(torch.equal(t_a, t_b), f"Same seed must produce identical tensors on {dev.type}")
+
+            # Sensitivity check with different seed
+            gen_c = torch.Generator(device=dev).manual_seed(2042)
+            t_c = torch.randn(8, 16, generator=gen_c, device=dev, dtype=torch.float32)
+            self.assertFalse(torch.equal(t_a, t_c), f"Different seeds must produce different tensors on {dev.type}")
+
+
 if __name__ == "__main__":
     unittest.main()

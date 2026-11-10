@@ -125,7 +125,7 @@ class Milestone4ATrainer:
         np.random.seed(seed)
 
         # Fixed validation latents for exact reproducibility across epochs
-        latent_gen = torch.Generator().manual_seed(seed + 999)
+        latent_gen = torch.Generator(device=self.device).manual_seed(seed + 999)
         self.fixed_val_latents = torch.randn(
             num_candidates_eval,
             self.generator.latent_dim,
@@ -135,7 +135,7 @@ class Milestone4ATrainer:
         )
 
         # Fixed counterfactual latents for controlled sensitivity evaluation
-        cf_gen = torch.Generator().manual_seed(seed + 1234)
+        cf_gen = torch.Generator(device=self.device).manual_seed(seed + 1234)
         self.fixed_cf_latents = torch.randn(
             num_candidates_eval,
             self.generator.latent_dim,
