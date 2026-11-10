@@ -1,0 +1,85 @@
+{
+  "timestamp_utc": "2026-11-10T10:15:59.313477+00:00",
+  "dataset_type": "pilot",
+  "total_records": 240,
+  "total_pulses_simulated": 480000,
+  "n_pulses_per_run": 2000,
+  "total_runtime_seconds": 166.48,
+  "total_runtime_minutes": 2.77,
+  "overall_average_time_per_run_seconds": 0.6937,
+  "overall_pulses_per_second": 2883.2,
+  "runtime_by_attack_family": {
+    "Null": {
+      "total_time_seconds": 8.54,
+      "run_count": 15,
+      "average_time_per_run_seconds": 0.5692,
+      "pulses_per_second": 3513.4
+    },
+    "Unitary Probe": {
+      "total_time_seconds": 74.81,
+      "run_count": 105,
+      "average_time_per_run_seconds": 0.7124,
+      "pulses_per_second": 2807.3
+    },
+    "Probabilistic Intercept-Resend": {
+      "total_time_seconds": 83.08,
+      "run_count": 120,
+      "average_time_per_run_seconds": 0.6923,
+      "pulses_per_second": 2888.9
+    }
+  },
+  "runtime_by_condition": {
+    "C01": {
+      "total_time_seconds": 30.08,
+      "run_count": 48,
+      "average_time_per_run_seconds": 0.6266,
+      "pulses_per_second": 3191.8
+    },
+    "C02": {
+      "total_time_seconds": 40.7,
+      "run_count": 48,
+      "average_time_per_run_seconds": 0.848,
+      "pulses_per_second": 2358.4
+    },
+    "C03": {
+      "total_time_seconds": 33.4,
+      "run_count": 48,
+      "average_time_per_run_seconds": 0.6958,
+      "pulses_per_second": 2874.4
+    },
+    "C04": {
+      "total_time_seconds": 30.88,
+      "run_count": 48,
+      "average_time_per_run_seconds": 0.6434,
+      "pulses_per_second": 3108.3
+    },
+    "C05": {
+      "total_time_seconds": 31.36,
+      "run_count": 48,
+      "average_time_per_run_seconds": 0.6533,
+      "pulses_per_second": 3061.6
+    }
+  },
+  "memory_and_hardware": {
+    "ram_initial_mb": 399.68,
+    "ram_final_mb": 512.9,
+    "ram_peak_delta_mb": 113.22,
+    "vram_initial_mb": 0.0,
+    "vram_final_mb": 0.0,
+    "vram_delta_mb": 0.0,
+    "aer_backend": "AerSimulator (CPU Multi-threaded OpenMP)",
+    "pytorch_cuda_device": "NVIDIA GeForce RTX 3050 6GB Laptop GPU"
+  },
+  "feasibility_statistics": {
+    "Feasible": 107,
+    "Infeasible": 52,
+    "Indeterminate": 81
+  },
+  "feasibility_yield": 0.4458,
+  "empirical_abort_statistics": {
+    "Aborted": 87,
+    "Passed": 153
+  },
+  "empirical_abort_rate": 0.3625,
+  "dataset_file_size_kb": 446.9
+}

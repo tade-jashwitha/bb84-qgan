@@ -1,0 +1,53 @@
+{
+  "milestone": "4A",
+  "verification_topic": "Scientific and Data Isolation",
+  "verified_at_utc": "2026-11-10T14:10:00Z",
+  "dataset_path": "results/full_training_dataset.json",
+  "dataset_sha256": "07C03E810470B3376EB48C51C13138DCF347D915F78E911F74A81E96F27CFB80",
+  "partition_breakdown": {
+    "total_records": 1152,
+    "total_conditions": 24,
+    "train_partition": {
+      "conditions": ["C01", "C02", "C03", "C04", "C05", "C06", "C07", "C08", "C09", "C10", "C11", "C12", "C13", "C14", "C15", "C16"],
+      "total_records": 768,
+      "feasible_records_for_training": 368,
+      "usage": "Gradient updates via DataLoader (batches of 64 with WeightedRandomSampler)"
+    },
+    "val_partition": {
+      "conditions": ["C17", "C18", "C19", "C20"],
+      "total_records": 192,
+      "feasible_records_for_val": 80,
+      "usage": "Periodic neural validation (loss_d, loss_g) and CRN forward quantum simulation (64 runs every 10 epochs)"
+    },
+    "test_partition": {
+      "conditions": ["C21", "C22", "C23", "C24"],
+      "total_records": 192,
+      "usage": "STRICT QUARANTINE — zero access during training, validation, or checkpoint selection"
+    }
+  },
+  "disjointness_proof": {
+    "train_test_disjoint": true,
+    "val_test_disjoint": true,
+    "train_val_disjoint": true,
+    "code_assertions": "experiments/train_milestone4a.py lines 988-989: assert train_conds.isdisjoint(test_conds); assert val_conds.isdisjoint(test_conds)"
+  },
+  "gradient_objective_isolation": {
+    "generator_loss": "nn.BCEWithLogitsLoss()(discriminator(fake_policy, condition), real_labels)",
+    "mutual_information_in_gradients": false,
+    "mutual_information_usage": "Strictly offline in importance-sampling weights w_i = exp(I_AE_i / tau_I) and post-simulation checkpoint selection ranking",
+    "physics_reward_bypass": "No direct backpropagation from non-differentiable quantum simulation into neural network weights"
+  },
+  "baseline_and_pilot_preservation": {
+    "pilot_best_checkpoint": {
+      "path": "checkpoints/cgan_pilot_best.pt",
+      "sha256": "F4050379F065E9FE3106A23D746396215EBF128F52249220013B07411ED827AA",
+      "status": "UNTOUCHED_AND_PRESERVED"
+    },
+    "pilot_latest_checkpoint": {
+      "path": "checkpoints/cgan_pilot_latest.pt",
+      "sha256": "0BAA0DBD0BE0FB4D75E752AFD2EB1E86045CBCDFB4D1468DA27B0A2BF618E1D5",
+      "status": "UNTOUCHED_AND_PRESERVED"
+    }
+  }
+}
+

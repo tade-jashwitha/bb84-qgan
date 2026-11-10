@@ -1,0 +1,71 @@
+{
+  "execution_metadata": {
+    "dataset_version": "1.0.0",
+    "dataset_type": "full_primary_grid",
+    "generated_at_utc": "2026-11-10T11:26:06.134417+00:00",
+    "output_path": "results/full_training_dataset.json",
+    "file_size_kb": 2176.27,
+    "total_records": 1152,
+    "total_pulses_simulated": 2304000,
+    "n_pulses_per_run": 2000,
+    "seeds_per_attack": [
+      101,
+      102,
+      103
+    ]
+  },
+  "performance_and_hardware": {
+    "total_execution_time_seconds": 756.64,
+    "total_execution_time_minutes": 12.61,
+    "average_time_per_run_seconds": 0.6568,
+    "simulation_throughput_pulses_per_second": 3045.0,
+    "initial_ram_mb": 399.68,
+    "final_ram_mb": 525.03,
+    "ram_delta_mb": 125.34,
+    "cuda_device_name": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+    "vram_allocated_mb": 0.0
+  },
+  "aggregate_feasibility_and_aborts": {
+    "feasible_count": 546,
+    "feasible_percentage": 47.4,
+    "infeasible_count": 234,
+    "infeasible_percentage": 20.31,
+    "indeterminate_count": 372,
+    "indeterminate_percentage": 32.29,
+    "protocol_abort_count": 401,
+    "protocol_abort_percentage": 34.81,
+    "protocol_pass_count": 751,
+    "protocol_pass_percentage": 65.19
+  },
+  "partition_breakdown": {
+    "train": {
+      "total_runs": 768,
+      "feasible": 368,
+      "infeasible": 151,
+      "indeterminate": 249,
+      "protocol_abort": 252,
+      "protocol_pass": 516
+    },
+    "val": {
+      "total_runs": 192,
+      "feasible": 99,
+      "infeasible": 31,
+      "indeterminate": 62,
+      "protocol_abort": 65,
+      "protocol_pass": 127
+    },
+    "test": {
+      "total_runs": 192,
+      "feasible": 79,
+      "infeasible": 52,
+      "indeterminate": 61,
+      "protocol_abort": 84,
+      "protocol_pass": 108
+    }
+  },
+  "attack_family_breakdown": {
+    "Null": 72,
+    "Unitary Probe": 504,
+    "Probabilistic Intercept-Resend": 576
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "milestone": "4A",
+  "project": "Adaptive QGAN-Based Eavesdropping in BB84 QKD",
+  "generated_utc": "2026-11-10T14:10:00Z",
+  "source_script": "experiments/train_milestone4a.py",
+  "source_script_sha256": "BA5787A8D4A24BA32358CD1B6B0A7C1A89A570466EBDD838D193052038B9F0B7",
+  "training_hyperparameters": {
+    "epochs": 200,
+    "batch_size": 64,
+    "latent_dim": 16,
+    "condition_dim": 2,
+    "policy_dim": 5,
+    "lr_g": 0.0002,
+    "lr_d": 0.0002,
+    "betas_g": [0.5, 0.999],
+    "betas_d": [0.5, 0.999],
+    "weight_decay": 0.0,
+    "grad_clip_max_norm": 10.0,
+    "criterion": "BCEWithLogitsLoss"
+  },
+  "gumbel_temperature_schedule": {
+    "tau_0": 1.0,
+    "tau_min": 0.20,
+    "tau_decay": 0.985,
+    "formula": "tau_t = max(tau_min, tau_0 * (tau_decay ^ epoch))"
+  },
+  "importance_sampling": {
+    "enabled": true,
+    "sampler": "torch.utils.data.WeightedRandomSampler",
+    "replacement": true,
+    "tau_I": 0.10,
+    "weight_formula": "w_i = exp(I_AE_i / tau_I)"
+  },
+  "generator_architecture": {
+    "class": "src.cgan.models.ConditionalGenerator",
+    "input_dimension": 18,
+    "trunk_layers": [
+      "Linear(18, 128)",
+      "LayerNorm(128)",
+      "LeakyReLU(0.2)",
+      "Dropout(0.1)",
+      "Linear(128, 128)",
+      "LayerNorm(128)",
+      "LeakyReLU(0.2)",
+      "Dropout(0.1)"
+    ],
+    "heads": {
+      "family_head": "Linear(128, 2) -> GumbelSoftmax / Softmax (PIR, Probe)",
+      "pir_head": "Linear(128, 2) -> Sigmoid -> [alpha in [0, 1], beta in [0, 1]]",
+      "probe_head": "Linear(128, 1) -> (pi / 4) * Sigmoid -> [theta_E_rad in [0, pi/4]]"
+    },
+    "canonical_masking": "canonical_mask_policy(family_weights, alpha, beta, theta_norm) -> R^5"
+  },
+  "discriminator_architecture": {
+    "class": "src.cgan.models.ConditionalDiscriminator",
+    "input_dimension": 7,
+    "layers": [
+      "spectral_norm(Linear(7, 128))",
+      "LeakyReLU(0.2)",
+      "Dropout(0.1)",
+      "spectral_norm(Linear(128, 64))",
+      "LeakyReLU(0.2)",
+      "Dropout(0.1)",
+      "spectral_norm(Linear(64, 1))"
+    ],
+    "regularization": "Spectral Normalization (Lipschitz constraint)"
+  },
+  "random_seeds": {
+    "main_seed": 42,
+    "fixed_val_latents_seed": 1041,
+    "fixed_cf_latents_seed": 1276,
+    "validation_crn_seed_formula": "50000 + c_idx * 100 + k_idx"
+  },
+  "physical_constraints_and_gates": {
+    "theta_E_rad_bounds": [0.0, 0.7853981633974483],
+    "alpha_bounds": [0.0, 1.0],
+    "beta_bounds": [0.0, 1.0],
+    "physical_validity_hard_gate": 1.0,
+    "zero_abort_hard_gate": 0,
+    "feasibility_screening_gate": 0.80,
+    "probe_dispersion_guard": 0.003,
+    "wilson_confidence_level": 0.95,
+    "wilson_z_score": 1.95996
+  }
+}
+

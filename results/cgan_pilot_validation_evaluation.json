@@ -1,0 +1,1287 @@
+{
+  "summary": {
+    "total_candidates_generated": 64,
+    "total_valid_policies": 64,
+    "valid_policy_rate": 1.0,
+    "total_feasible_candidates": 61,
+    "overall_feasibility_yield": 0.9531,
+    "family_diversity": {
+      "PIR_count": 7,
+      "PIR_ratio": 0.1094,
+      "Probe_count": 57,
+      "Probe_ratio": 0.8906
+    },
+    "continuous_diversity": {
+      "alpha_count": 7,
+      "alpha_mean": 0.0944,
+      "alpha_std": 0.0169,
+      "theta_count": 57,
+      "theta_mean_rad": 0.0455,
+      "theta_std_rad": 0.0107
+    },
+    "mode_collapse_assessment": "MODERATE (Narrow continuous variance)",
+    "physical_evaluation_runtime_seconds": 59.06
+  },
+  "condition_evaluations": {
+    "C17": {
+      "p_depol": 0.01,
+      "q_budget": 0.05,
+      "gamma_noise_hat": 0.008,
+      "candidates_evaluated": 16,
+      "valid_parameter_count": 16,
+      "feasible_count": 15,
+      "feasible_rate": 0.9375,
+      "candidates": [
+        {
+          "candidate_index": 0,
+          "attack_id": "cGAN-Probe-00",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.03660586476325989,
+            "theta_E_deg": 2.097361556361448
+          },
+          "sample_qber_test": 0.00404,
+          "wilson_center": 0.00786,
+          "wilson_lcb": 0.00111,
+          "wilson_ucb": 0.01461,
+          "wilson_margin": 0.00675,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00386,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 1,
+          "attack_id": "cGAN-Probe-01",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.0523206926882267,
+            "theta_E_deg": 2.9977548722363756
+          },
+          "sample_qber_test": 0.01004,
+          "wilson_center": 0.01379,
+          "wilson_lcb": 0.0043,
+          "wilson_ucb": 0.02329,
+          "wilson_margin": 0.00949,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00788,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 2,
+          "attack_id": "cGAN-PIR-02",
+          "family": "Probabilistic Intercept-Resend",
+          "parameters": {
+            "alpha": 0.07199634611606598,
+            "beta": 0.4736434519290924,
+            "theta_E_rad": null,
+            "theta_E_deg": null
+          },
+          "sample_qber_test": 0.03074,
+          "wilson_center": 0.0344,
+          "wilson_lcb": 0.01871,
+          "wilson_ucb": 0.05009,
+          "wilson_margin": 0.01569,
+          "feasibility": "Indeterminate",
+          "eve_info_gain": 0.00094,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 3,
+          "attack_id": "cGAN-Probe-03",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.039620161056518555,
+            "theta_E_deg": 2.2700680121670977
+          },
+          "sample_qber_test": 0.00783,
+          "wilson_center": 0.0115,
+          "wilson_lcb": 0.00305,
+          "wilson_ucb": 0.01995,
+          "wilson_margin": 0.00845,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00452,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 4,
+          "attack_id": "cGAN-Probe-04",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.036037810146808624,
+            "theta_E_deg": 2.064814424305868
+          },
+          "sample_qber_test": 0.00402,
+          "wilson_center": 0.00783,
+          "wilson_lcb": 0.0011,
+          "wilson_ucb": 0.01455,
+          "wilson_margin": 0.00672,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00374,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 5,
+          "attack_id": "cGAN-Probe-05",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.037185028195381165,
+            "theta_E_deg": 2.1305451766703087
+          },
+          "sample_qber_test": 0.00602,
+          "wilson_center": 0.00981,
+          "wilson_lcb": 0.00205,
+          "wilson_ucb": 0.01756,
+          "wilson_margin": 0.00775,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00399,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 6,
+          "attack_id": "cGAN-Probe-06",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.03480466827750206,
+            "theta_E_deg": 1.9941605996537288
+          },
+          "sample_qber_test": 0.00598,
+          "wilson_center": 0.00973,
+          "wilson_lcb": 0.00203,
+          "wilson_ucb": 0.01742,
+          "wilson_margin": 0.00769,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00349,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 7,
+          "attack_id": "cGAN-Probe-07",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.051635850220918655,
+            "theta_E_deg": 2.9585162892282986
+          },
+          "sample_qber_test": 0.0099,
+          "wilson_center": 0.0136,
+          "wilson_lcb": 0.00424,
+          "wilson_ucb": 0.02297,
+          "wilson_margin": 0.00936,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00768,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 8,
+          "attack_id": "cGAN-Probe-08",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.039440494030714035,
+            "theta_E_deg": 2.259773849870831
+          },
+          "sample_qber_test": 0.00783,
+          "wilson_center": 0.0115,
+          "wilson_lcb": 0.00305,
+          "wilson_ucb": 0.01995,
+          "wilson_margin": 0.00845,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00448,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 9,
+          "attack_id": "cGAN-Probe-09",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.051027994602918625,
+            "theta_E_deg": 2.9236887277635804
+          },
+          "sample_qber_test": 0.00778,
+          "wilson_center": 0.01143,
+          "wilson_lcb": 0.00303,
+          "wilson_ucb": 0.01984,
+          "wilson_margin": 0.0084,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.0075,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 10,
+          "attack_id": "cGAN-Probe-10",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.04359059035778046,
+            "theta_E_deg": 2.4975568539844812
+          },
+          "sample_qber_test": 0.00977,
+          "wilson_center": 0.01342,
+          "wilson_lcb": 0.00418,
+          "wilson_ucb": 0.02265,
+          "wilson_margin": 0.00924,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00548,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 11,
+          "attack_id": "cGAN-Probe-11",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.04299134761095047,
+            "theta_E_deg": 2.4632227736872965
+          },
+          "sample_qber_test": 0.0,
+          "wilson_center": 0.00377,
+          "wilson_lcb": 0.0,
+          "wilson_ucb": 0.00755,
+          "wilson_margin": 0.00377,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00533,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 12,
+          "attack_id": "cGAN-PIR-12",
+          "family": "Probabilistic Intercept-Resend",
+          "parameters": {
+            "alpha": 0.07327672839164734,
+            "beta": 0.5064132213592529,
+            "theta_E_rad": null,
+            "theta_E_deg": null
+          },
+          "sample_qber_test": 0.02227,
+          "wilson_center": 0.02595,
+          "wilson_lcb": 0.01248,
+          "wilson_ucb": 0.03943,
+          "wilson_margin": 0.01348,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00097,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 13,
+          "attack_id": "cGAN-Probe-13",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.03919162601232529,
+            "theta_E_deg": 2.2455147627613714
+          },
+          "sample_qber_test": 0.00962,
+          "wilson_center": 0.01321,
+          "wilson_lcb": 0.00411,
+          "wilson_ucb": 0.02231,
+          "wilson_margin": 0.0091,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00443,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 14,
+          "attack_id": "cGAN-Probe-14",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.05719028413295746,
+            "theta_E_deg": 3.276761909972461
+          },
+          "sample_qber_test": 0.00584,
+          "wilson_center": 0.0095,
+          "wilson_lcb": 0.00199,
+          "wilson_ucb": 0.01702,
+          "wilson_margin": 0.00752,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00942,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 15,
+          "attack_id": "cGAN-Probe-15",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.06328584253787994,
+            "theta_E_deg": 3.6260116803500155
+          },
+          "sample_qber_test": 0.01417,
+          "wilson_center": 0.01792,
+          "wilson_lcb": 0.00688,
+          "wilson_ucb": 0.02896,
+          "wilson_margin": 0.01104,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.01153,
+          "protocol_abort": false
+        }
+      ]
+    },
+    "C18": {
+      "p_depol": 0.01,
+      "q_budget": 0.11,
+      "gamma_noise_hat": 0.005,
+      "candidates_evaluated": 16,
+      "valid_parameter_count": 16,
+      "feasible_count": 16,
+      "feasible_rate": 1.0,
+      "candidates": [
+        {
+          "candidate_index": 0,
+          "attack_id": "cGAN-Probe-00",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.03371221199631691,
+            "theta_E_deg": 1.9315674654392625
+          },
+          "sample_qber_test": 0.00405,
+          "wilson_center": 0.00788,
+          "wilson_lcb": 0.00111,
+          "wilson_ucb": 0.01464,
+          "wilson_margin": 0.00676,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00328,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 1,
+          "attack_id": "cGAN-Probe-01",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.03469870984554291,
+            "theta_E_deg": 1.9880896286986451
+          },
+          "sample_qber_test": 0.00778,
+          "wilson_center": 0.01143,
+          "wilson_lcb": 0.00303,
+          "wilson_ucb": 0.01984,
+          "wilson_margin": 0.0084,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00347,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 2,
+          "attack_id": "cGAN-Probe-02",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.08835496008396149,
+            "theta_E_deg": 5.062366311857847
+          },
+          "sample_qber_test": 0.00763,
+          "wilson_center": 0.01122,
+          "wilson_lcb": 0.00297,
+          "wilson_ucb": 0.01946,
+          "wilson_margin": 0.00824,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.02241,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 3,
+          "attack_id": "cGAN-Probe-03",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.0523882731795311,
+            "theta_E_deg": 3.001626949165538
+          },
+          "sample_qber_test": 0.00775,
+          "wilson_center": 0.01139,
+          "wilson_lcb": 0.00302,
+          "wilson_ucb": 0.01976,
+          "wilson_margin": 0.00837,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.0079,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 4,
+          "attack_id": "cGAN-Probe-04",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.03581883758306503,
+            "theta_E_deg": 2.0522682205742004
+          },
+          "sample_qber_test": 0.00816,
+          "wilson_center": 0.01199,
+          "wilson_lcb": 0.00318,
+          "wilson_ucb": 0.0208,
+          "wilson_margin": 0.00881,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.0037,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 5,
+          "attack_id": "cGAN-Probe-05",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.04630674049258232,
+            "theta_E_deg": 2.6531807932325178
+          },
+          "sample_qber_test": 0.01603,
+          "wilson_center": 0.01973,
+          "wilson_lcb": 0.00815,
+          "wilson_ucb": 0.03131,
+          "wilson_margin": 0.01158,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00618,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 6,
+          "attack_id": "cGAN-Probe-06",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.0706075057387352,
+            "theta_E_deg": 4.045512080775267
+          },
+          "sample_qber_test": 0.01195,
+          "wilson_center": 0.01566,
+          "wilson_lcb": 0.00549,
+          "wilson_ucb": 0.02583,
+          "wilson_margin": 0.01017,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.01434,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 7,
+          "attack_id": "cGAN-Probe-07",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.05276075005531311,
+            "theta_E_deg": 3.022968302114066
+          },
+          "sample_qber_test": 0.00402,
+          "wilson_center": 0.00781,
+          "wilson_lcb": 0.0011,
+          "wilson_ucb": 0.01452,
+          "wilson_margin": 0.00671,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00802,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 8,
+          "attack_id": "cGAN-Probe-08",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.05299553647637367,
+            "theta_E_deg": 3.0364205731278178
+          },
+          "sample_qber_test": 0.00586,
+          "wilson_center": 0.00954,
+          "wilson_lcb": 0.00199,
+          "wilson_ucb": 0.01708,
+          "wilson_margin": 0.00754,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00809,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 9,
+          "attack_id": "cGAN-Probe-09",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.05378465726971626,
+            "theta_E_deg": 3.081633864112363
+          },
+          "sample_qber_test": 0.00982,
+          "wilson_center": 0.01349,
+          "wilson_lcb": 0.0042,
+          "wilson_ucb": 0.02279,
+          "wilson_margin": 0.00929,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00833,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 10,
+          "attack_id": "cGAN-Probe-10",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.037542205303907394,
+            "theta_E_deg": 2.151009917527548
+          },
+          "sample_qber_test": 0.0123,
+          "wilson_center": 0.0161,
+          "wilson_lcb": 0.00565,
+          "wilson_ucb": 0.02656,
+          "wilson_margin": 0.01046,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00406,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 11,
+          "attack_id": "cGAN-Probe-11",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.05425161123275757,
+            "theta_E_deg": 3.108388355421538
+          },
+          "sample_qber_test": 0.0084,
+          "wilson_center": 0.01234,
+          "wilson_lcb": 0.00327,
+          "wilson_ucb": 0.02141,
+          "wilson_margin": 0.00907,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00848,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 12,
+          "attack_id": "cGAN-Probe-12",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.03776765614748001,
+            "theta_E_deg": 2.163927299351923
+          },
+          "sample_qber_test": 0.01758,
+          "wilson_center": 0.02117,
+          "wilson_lcb": 0.00927,
+          "wilson_ucb": 0.03307,
+          "wilson_margin": 0.0119,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00411,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 13,
+          "attack_id": "cGAN-PIR-13",
+          "family": "Probabilistic Intercept-Resend",
+          "parameters": {
+            "alpha": 0.08457641303539276,
+            "beta": 0.5424821972846985,
+            "theta_E_rad": null,
+            "theta_E_deg": null
+          },
+          "sample_qber_test": 0.02823,
+          "wilson_center": 0.03185,
+          "wilson_lcb": 0.01689,
+          "wilson_ucb": 0.04682,
+          "wilson_margin": 0.01496,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.0013,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 14,
+          "attack_id": "cGAN-Probe-14",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.04582836851477623,
+            "theta_E_deg": 2.625772097866903
+          },
+          "sample_qber_test": 0.00403,
+          "wilson_center": 0.00784,
+          "wilson_lcb": 0.00111,
+          "wilson_ucb": 0.01458,
+          "wilson_margin": 0.00674,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00605,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 15,
+          "attack_id": "cGAN-Probe-15",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.06189817935228348,
+            "theta_E_deg": 3.5465044364296587
+          },
+          "sample_qber_test": 0.00198,
+          "wilson_center": 0.00574,
+          "wilson_lcb": 0.00035,
+          "wilson_ucb": 0.01113,
+          "wilson_margin": 0.00539,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.01103,
+          "protocol_abort": false
+        }
+      ]
+    },
+    "C19": {
+      "p_depol": 0.03,
+      "q_budget": 0.05,
+      "gamma_noise_hat": 0.012,
+      "candidates_evaluated": 16,
+      "valid_parameter_count": 16,
+      "feasible_count": 14,
+      "feasible_rate": 0.875,
+      "candidates": [
+        {
+          "candidate_index": 0,
+          "attack_id": "cGAN-Probe-00",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.03646818548440933,
+            "theta_E_deg": 2.0894731147569066
+          },
+          "sample_qber_test": 0.01829,
+          "wilson_center": 0.02202,
+          "wilson_lcb": 0.00965,
+          "wilson_ucb": 0.0344,
+          "wilson_margin": 0.01237,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00383,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 1,
+          "attack_id": "cGAN-Probe-01",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.032168909907341,
+            "theta_E_deg": 1.8431427692272195
+          },
+          "sample_qber_test": 0.01992,
+          "wilson_center": 0.02357,
+          "wilson_lcb": 0.01086,
+          "wilson_ucb": 0.03628,
+          "wilson_margin": 0.01271,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00298,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 2,
+          "attack_id": "cGAN-Probe-02",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.05338079854846001,
+            "theta_E_deg": 3.0584944638648293
+          },
+          "sample_qber_test": 0.02817,
+          "wilson_center": 0.03179,
+          "wilson_lcb": 0.01685,
+          "wilson_ucb": 0.04672,
+          "wilson_margin": 0.01494,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00821,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 3,
+          "attack_id": "cGAN-Probe-03",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.046876419335603714,
+            "theta_E_deg": 2.685820986615539
+          },
+          "sample_qber_test": 0.01613,
+          "wilson_center": 0.01985,
+          "wilson_lcb": 0.00819,
+          "wilson_ucb": 0.0315,
+          "wilson_margin": 0.01165,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00633,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 4,
+          "attack_id": "cGAN-Probe-04",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.05959052965044975,
+            "theta_E_deg": 3.4142858479199636
+          },
+          "sample_qber_test": 0.02362,
+          "wilson_center": 0.0272,
+          "wilson_lcb": 0.01356,
+          "wilson_ucb": 0.04083,
+          "wilson_margin": 0.01363,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.01022,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 5,
+          "attack_id": "cGAN-Probe-05",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.030267737805843353,
+            "theta_E_deg": 1.734213631683387
+          },
+          "sample_qber_test": 0.02414,
+          "wilson_center": 0.02779,
+          "wilson_lcb": 0.01386,
+          "wilson_ucb": 0.04172,
+          "wilson_margin": 0.01393,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00264,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 6,
+          "attack_id": "cGAN-Probe-06",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.03996524214744568,
+            "theta_E_deg": 2.2898397022669923
+          },
+          "sample_qber_test": 0.00808,
+          "wilson_center": 0.01187,
+          "wilson_lcb": 0.00315,
+          "wilson_ucb": 0.02059,
+          "wilson_margin": 0.00872,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.0046,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 7,
+          "attack_id": "cGAN-Probe-07",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.049408797174692154,
+            "theta_E_deg": 2.8309155489277664
+          },
+          "sample_qber_test": 0.01613,
+          "wilson_center": 0.01985,
+          "wilson_lcb": 0.00819,
+          "wilson_ucb": 0.0315,
+          "wilson_margin": 0.01165,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00703,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 8,
+          "attack_id": "cGAN-Probe-08",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.045666877180337906,
+            "theta_E_deg": 2.616519325975651
+          },
+          "sample_qber_test": 0.01354,
+          "wilson_center": 0.01713,
+          "wilson_lcb": 0.00657,
+          "wilson_ucb": 0.02768,
+          "wilson_margin": 0.01055,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00601,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 9,
+          "attack_id": "cGAN-Probe-09",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.06300775706768036,
+            "theta_E_deg": 3.610078556563668
+          },
+          "sample_qber_test": 0.01205,
+          "wilson_center": 0.01578,
+          "wilson_lcb": 0.00553,
+          "wilson_ucb": 0.02603,
+          "wilson_margin": 0.01025,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.01142,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 10,
+          "attack_id": "cGAN-Probe-10",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.05030990019440651,
+            "theta_E_deg": 2.882544948863893
+          },
+          "sample_qber_test": 0.01782,
+          "wilson_center": 0.02146,
+          "wilson_lcb": 0.0094,
+          "wilson_ucb": 0.03352,
+          "wilson_margin": 0.01206,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00729,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 11,
+          "attack_id": "cGAN-PIR-11",
+          "family": "Probabilistic Intercept-Resend",
+          "parameters": {
+            "alpha": 0.10362031310796738,
+            "beta": 0.44207778573036194,
+            "theta_E_rad": null,
+            "theta_E_deg": null
+          },
+          "sample_qber_test": 0.04321,
+          "wilson_center": 0.04679,
+          "wilson_lcb": 0.02843,
+          "wilson_ucb": 0.06515,
+          "wilson_margin": 0.01836,
+          "feasibility": "Indeterminate",
+          "eve_info_gain": 0.00196,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 12,
+          "attack_id": "cGAN-Probe-12",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.04262135922908783,
+            "theta_E_deg": 2.4420240009376926
+          },
+          "sample_qber_test": 0.01572,
+          "wilson_center": 0.01934,
+          "wilson_lcb": 0.00799,
+          "wilson_ucb": 0.0307,
+          "wilson_margin": 0.01136,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00524,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 13,
+          "attack_id": "cGAN-PIR-13",
+          "family": "Probabilistic Intercept-Resend",
+          "parameters": {
+            "alpha": 0.11352119594812393,
+            "beta": 0.38085824251174927,
+            "theta_E_rad": null,
+            "theta_E_deg": null
+          },
+          "sample_qber_test": 0.03808,
+          "wilson_center": 0.04161,
+          "wilson_lcb": 0.02451,
+          "wilson_ucb": 0.0587,
+          "wilson_margin": 0.0171,
+          "feasibility": "Indeterminate",
+          "eve_info_gain": 0.00246,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 14,
+          "attack_id": "cGAN-Probe-14",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.050288084894418716,
+            "theta_E_deg": 2.8812950242457807
+          },
+          "sample_qber_test": 0.0233,
+          "wilson_center": 0.02683,
+          "wilson_lcb": 0.01338,
+          "wilson_ucb": 0.04028,
+          "wilson_margin": 0.01345,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00728,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 15,
+          "attack_id": "cGAN-Probe-15",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.03297998383641243,
+            "theta_E_deg": 1.8896138822361055
+          },
+          "sample_qber_test": 0.00811,
+          "wilson_center": 0.01192,
+          "wilson_lcb": 0.00316,
+          "wilson_ucb": 0.02067,
+          "wilson_margin": 0.00876,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00314,
+          "protocol_abort": false
+        }
+      ]
+    },
+    "C20": {
+      "p_depol": 0.03,
+      "q_budget": 0.11,
+      "gamma_noise_hat": 0.016,
+      "candidates_evaluated": 16,
+      "valid_parameter_count": 16,
+      "feasible_count": 16,
+      "feasible_rate": 1.0,
+      "candidates": [
+        {
+          "candidate_index": 0,
+          "attack_id": "cGAN-Probe-00",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.03503626585006714,
+            "theta_E_deg": 2.0074301631071827
+          },
+          "sample_qber_test": 0.0099,
+          "wilson_center": 0.0136,
+          "wilson_lcb": 0.00424,
+          "wilson_ucb": 0.02297,
+          "wilson_margin": 0.00936,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00354,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 1,
+          "attack_id": "cGAN-Probe-01",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.04059808328747749,
+            "theta_E_deg": 2.3260988286930626
+          },
+          "sample_qber_test": 0.01025,
+          "wilson_center": 0.01407,
+          "wilson_lcb": 0.00438,
+          "wilson_ucb": 0.02376,
+          "wilson_margin": 0.00969,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00475,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 2,
+          "attack_id": "cGAN-Probe-02",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.03810166195034981,
+            "theta_E_deg": 2.183064422189241
+          },
+          "sample_qber_test": 0.01195,
+          "wilson_center": 0.01566,
+          "wilson_lcb": 0.00549,
+          "wilson_ucb": 0.02583,
+          "wilson_margin": 0.01017,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00418,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 3,
+          "attack_id": "cGAN-Probe-03",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.03636438027024269,
+            "theta_E_deg": 2.083525514093706
+          },
+          "sample_qber_test": 0.01818,
+          "wilson_center": 0.02189,
+          "wilson_lcb": 0.00959,
+          "wilson_ucb": 0.03419,
+          "wilson_margin": 0.0123,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00381,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 4,
+          "attack_id": "cGAN-Probe-04",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.03869697079062462,
+            "theta_E_deg": 2.217173106243815
+          },
+          "sample_qber_test": 0.01566,
+          "wilson_center": 0.01927,
+          "wilson_lcb": 0.00795,
+          "wilson_ucb": 0.03059,
+          "wilson_margin": 0.01132,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00432,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 5,
+          "attack_id": "cGAN-Probe-05",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.03760402277112007,
+            "theta_E_deg": 2.1545517974990225
+          },
+          "sample_qber_test": 0.01633,
+          "wilson_center": 0.02009,
+          "wilson_lcb": 0.0083,
+          "wilson_ucb": 0.03188,
+          "wilson_margin": 0.01179,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00408,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 6,
+          "attack_id": "cGAN-Probe-06",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.045321885496377945,
+            "theta_E_deg": 2.5967527585176344
+          },
+          "sample_qber_test": 0.02405,
+          "wilson_center": 0.02768,
+          "wilson_lcb": 0.01381,
+          "wilson_ucb": 0.04156,
+          "wilson_margin": 0.01388,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00592,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 7,
+          "attack_id": "cGAN-Probe-07",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.035240061581134796,
+            "theta_E_deg": 2.0191067983801423
+          },
+          "sample_qber_test": 0.01768,
+          "wilson_center": 0.02129,
+          "wilson_lcb": 0.00933,
+          "wilson_ucb": 0.03326,
+          "wilson_margin": 0.01196,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00358,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 8,
+          "attack_id": "cGAN-Probe-08",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.051660552620887756,
+            "theta_E_deg": 2.959931632490372
+          },
+          "sample_qber_test": 0.02564,
+          "wilson_center": 0.02921,
+          "wilson_lcb": 0.01504,
+          "wilson_ucb": 0.04337,
+          "wilson_margin": 0.01416,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00769,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 9,
+          "attack_id": "cGAN-Probe-09",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.03448723629117012,
+            "theta_E_deg": 1.9759730865544542
+          },
+          "sample_qber_test": 0.01837,
+          "wilson_center": 0.02211,
+          "wilson_lcb": 0.00969,
+          "wilson_ucb": 0.03454,
+          "wilson_margin": 0.01242,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00343,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 10,
+          "attack_id": "cGAN-Probe-10",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.052206218242645264,
+            "theta_E_deg": 2.991195969642459
+          },
+          "sample_qber_test": 0.01619,
+          "wilson_center": 0.01993,
+          "wilson_lcb": 0.00823,
+          "wilson_ucb": 0.03163,
+          "wilson_margin": 0.0117,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00785,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 11,
+          "attack_id": "cGAN-Probe-11",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.04375142604112625,
+            "theta_E_deg": 2.506772059835298
+          },
+          "sample_qber_test": 0.00762,
+          "wilson_center": 0.0112,
+          "wilson_lcb": 0.00297,
+          "wilson_ucb": 0.01942,
+          "wilson_margin": 0.00823,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00552,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 12,
+          "attack_id": "cGAN-PIR-12",
+          "family": "Probabilistic Intercept-Resend",
+          "parameters": {
+            "alpha": 0.09676877409219742,
+            "beta": 0.48050421476364136,
+            "theta_E_rad": null,
+            "theta_E_deg": null
+          },
+          "sample_qber_test": 0.05306,
+          "wilson_center": 0.05654,
+          "wilson_lcb": 0.03646,
+          "wilson_ucb": 0.07661,
+          "wilson_margin": 0.02007,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00169,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 13,
+          "attack_id": "cGAN-Probe-13",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.04521828144788742,
+            "theta_E_deg": 2.5908166837986584
+          },
+          "sample_qber_test": 0.01365,
+          "wilson_center": 0.01726,
+          "wilson_lcb": 0.00663,
+          "wilson_ucb": 0.0279,
+          "wilson_margin": 0.01063,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00589,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 14,
+          "attack_id": "cGAN-PIR-14",
+          "family": "Probabilistic Intercept-Resend",
+          "parameters": {
+            "alpha": 0.11676044017076492,
+            "beta": 0.5294634103775024,
+            "theta_E_rad": null,
+            "theta_E_deg": null
+          },
+          "sample_qber_test": 0.03407,
+          "wilson_center": 0.03763,
+          "wilson_lcb": 0.02138,
+          "wilson_ucb": 0.05388,
+          "wilson_margin": 0.01625,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00247,
+          "protocol_abort": false
+        },
+        {
+          "candidate_index": 15,
+          "attack_id": "cGAN-Probe-15",
+          "family": "Unitary Probe",
+          "parameters": {
+            "alpha": null,
+            "beta": null,
+            "theta_E_rad": 0.04133942350745201,
+            "theta_E_deg": 2.3685744944809026
+          },
+          "sample_qber_test": 0.01934,
+          "wilson_center": 0.02289,
+          "wilson_lcb": 0.01054,
+          "wilson_ucb": 0.03524,
+          "wilson_margin": 0.01235,
+          "feasibility": "Feasible",
+          "eve_info_gain": 0.00493,
+          "protocol_abort": false
+        }
+      ]
+    }
+  }
+}

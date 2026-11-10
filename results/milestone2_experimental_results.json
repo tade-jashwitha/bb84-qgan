@@ -1,0 +1,579 @@
+{
+  "experiment_1_depolarizing_sweep": {
+    "data": [
+      {
+        "p": 0.0,
+        "observed_qber": 0.0,
+        "theoretical_qber": 0.0,
+        "observed_qber_z": 0.0,
+        "theoretical_qber_z": 0.0,
+        "observed_qber_x": 0.0,
+        "theoretical_qber_x": 0.0,
+        "average_state_fidelity": 1.0,
+        "theoretical_fidelity": 1.0,
+        "sifted_bits": 4982,
+        "error_count": 0,
+        "runtime_sec": 2.7648348808288574
+      },
+      {
+        "p": 0.01,
+        "observed_qber": 0.005454545454545455,
+        "theoretical_qber": 0.005,
+        "observed_qber_z": 0.005136309758988542,
+        "theoretical_qber_z": 0.005,
+        "observed_qber_x": 0.005787515502273667,
+        "theoretical_qber_x": 0.005,
+        "average_state_fidelity": 0.995,
+        "theoretical_fidelity": 0.995,
+        "sifted_bits": 4950,
+        "error_count": 27,
+        "runtime_sec": 2.8893582820892334
+      },
+      {
+        "p": 0.03,
+        "observed_qber": 0.019736842105263157,
+        "theoretical_qber": 0.015,
+        "observed_qber_z": 0.019178082191780823,
+        "theoretical_qber_z": 0.015,
+        "observed_qber_x": 0.02031694433157253,
+        "theoretical_qber_x": 0.015,
+        "average_state_fidelity": 0.9850000000000001,
+        "theoretical_fidelity": 0.985,
+        "sifted_bits": 5016,
+        "error_count": 99,
+        "runtime_sec": 3.3950347900390625
+      },
+      {
+        "p": 0.05,
+        "observed_qber": 0.02179616548940464,
+        "theoretical_qber": 0.025,
+        "observed_qber_z": 0.020242914979757085,
+        "theoretical_qber_z": 0.025,
+        "observed_qber_x": 0.023340040241448694,
+        "theoretical_qber_x": 0.025,
+        "average_state_fidelity": 0.9750000000000001,
+        "theoretical_fidelity": 0.975,
+        "sifted_bits": 4955,
+        "error_count": 108,
+        "runtime_sec": 2.9647562503814697
+      },
+      {
+        "p": 0.1,
+        "observed_qber": 0.05126658624849216,
+        "theoretical_qber": 0.05,
+        "observed_qber_z": 0.04946852003270646,
+        "theoretical_qber_z": 0.05,
+        "observed_qber_x": 0.05300632911392405,
+        "theoretical_qber_x": 0.05,
+        "average_state_fidelity": 0.95,
+        "theoretical_fidelity": 0.95,
+        "sifted_bits": 4974,
+        "error_count": 255,
+        "runtime_sec": 3.365344524383545
+      },
+      {
+        "p": 0.2,
+        "observed_qber": 0.098137392349289,
+        "theoretical_qber": 0.1,
+        "observed_qber_z": 0.10073111291632819,
+        "theoretical_qber_z": 0.1,
+        "observed_qber_x": 0.09561438166732517,
+        "theoretical_qber_x": 0.1,
+        "average_state_fidelity": 0.9000000000000001,
+        "theoretical_fidelity": 0.9,
+        "sifted_bits": 4993,
+        "error_count": 490,
+        "runtime_sec": 3.2308619022369385
+      }
+    ],
+    "plot_path": "results\\exp1_depolarizing_sweep.png"
+  },
+  "experiment_2_amplitude_damping_sweep": {
+    "data": [
+      {
+        "gamma": 0.0,
+        "observed_qber": 0.0,
+        "theoretical_qber": 0.0,
+        "observed_qber_z": 0.0,
+        "theoretical_qber_z": 0.0,
+        "observed_qber_x": 0.0,
+        "theoretical_qber_x": 0.0,
+        "error_asymmetry_delta": 0.0,
+        "theoretical_asymmetry": 0.0,
+        "sifted_bits": 5095,
+        "runtime_sec": 3.365680456161499
+      },
+      {
+        "gamma": 0.01,
+        "observed_qber": 0.004979087831109341,
+        "theoretical_qber": 0.0037531407233450088,
+        "observed_qber_z": 0.005792304509722797,
+        "theoretical_qber_z": 0.005,
+        "observed_qber_x": 0.004224270353302612,
+        "theoretical_qber_x": 0.0025062814466900174,
+        "error_asymmetry_delta": 0.0015680341564201852,
+        "theoretical_asymmetry": 0.0024937185533099827,
+        "sifted_bits": 5021,
+        "runtime_sec": 4.234792470932007
+      },
+      {
+        "gamma": 0.03,
+        "observed_qber": 0.012069647803719826,
+        "theoretical_qber": 0.01127855495509738,
+        "observed_qber_z": 0.015457788347205707,
+        "theoretical_qber_z": 0.015,
+        "observed_qber_x": 0.00869221651521138,
+        "theoretical_qber_x": 0.007557109910194759,
+        "error_asymmetry_delta": 0.006765571831994327,
+        "theoretical_asymmetry": 0.00744289008980524,
+        "sifted_bits": 5054,
+        "runtime_sec": 3.993540048599243
+      },
+      {
+        "gamma": 0.05,
+        "observed_qber": 0.016633663366336635,
+        "theoretical_qber": 0.018830141379775917,
+        "observed_qber_z": 0.021781408012446518,
+        "theoretical_qber_z": 0.025,
+        "observed_qber_x": 0.011294876966518758,
+        "theoretical_qber_x": 0.012660282759551833,
+        "error_asymmetry_delta": 0.01048653104592776,
+        "theoretical_asymmetry": 0.012339717240448168,
+        "sifted_bits": 5050,
+        "runtime_sec": 4.104872941970825
+      },
+      {
+        "gamma": 0.1,
+        "observed_qber": 0.04046125834513453,
+        "theoretical_qber": 0.03782917548737156,
+        "observed_qber_z": 0.05802861685214626,
+        "theoretical_qber_z": 0.05,
+        "observed_qber_x": 0.022249690976514216,
+        "theoretical_qber_x": 0.025658350974743116,
+        "error_asymmetry_delta": 0.03577892587563204,
+        "theoretical_asymmetry": 0.024341649025256887,
+        "sifted_bits": 4943,
+        "runtime_sec": 4.149515628814697
+      },
+      {
+        "gamma": 0.2,
+        "observed_qber": 0.07096903900281464,
+        "theoretical_qber": 0.07639320225002104,
+        "observed_qber_z": 0.09090909090909091,
+        "theoretical_qber_z": 0.1,
+        "observed_qber_x": 0.051220488195278115,
+        "theoretical_qber_x": 0.05278640450004207,
+        "error_asymmetry_delta": 0.0396886027138128,
+        "theoretical_asymmetry": 0.04721359549995793,
+        "sifted_bits": 4974,
+        "runtime_sec": 4.099175691604614
+      }
+    ],
+    "bit_bias_investigation": [
+      {
+        "f1_target": 0.25,
+        "f1_empirical": 0.244125,
+        "gamma": 0.1,
+        "observed_qber_z": 0.019240256536753823,
+        "theoretical_qber_z": 0.025
+      },
+      {
+        "f1_target": 0.5,
+        "f1_empirical": 0.492125,
+        "gamma": 0.1,
+        "observed_qber_z": 0.045880611741489885,
+        "theoretical_qber_z": 0.05
+      },
+      {
+        "f1_target": 0.75,
+        "f1_empirical": 0.751875,
+        "gamma": 0.1,
+        "observed_qber_z": 0.06808090774543661,
+        "theoretical_qber_z": 0.07500000000000001
+      }
+    ],
+    "plot_path": "results\\exp2_amplitude_damping_sweep.png"
+  },
+  "experiment_3_phase_damping_sweep": {
+    "data": [
+      {
+        "lambda": 0.0,
+        "observed_qber": 0.0,
+        "theoretical_qber": 0.0,
+        "observed_qber_z": 0.0,
+        "theoretical_qber_z": 0.0,
+        "observed_qber_x": 0.0,
+        "theoretical_qber_x": 0.0,
+        "coherence_l1": 1.0,
+        "coherence_loss": 0.0,
+        "average_state_fidelity": 1.0,
+        "sifted_bits": 4950,
+        "runtime_sec": 2.931342124938965
+      },
+      {
+        "lambda": 0.01,
+        "observed_qber": 0.0019798059790140567,
+        "theoretical_qber": 0.0012531407233450087,
+        "observed_qber_z": 0.0,
+        "theoretical_qber_z": 0.0,
+        "observed_qber_x": 0.003878975950349108,
+        "theoretical_qber_x": 0.0025062814466900174,
+        "coherence_l1": 0.99498743710662,
+        "coherence_loss": 0.005012562893380035,
+        "average_state_fidelity": 0.9987468592766549,
+        "sifted_bits": 5051,
+        "runtime_sec": 3.828451633453369
+      },
+      {
+        "lambda": 0.03,
+        "observed_qber": 0.003196803196803197,
+        "theoretical_qber": 0.0037785549550973796,
+        "observed_qber_z": 0.0,
+        "theoretical_qber_z": 0.0,
+        "observed_qber_x": 0.006191950464396285,
+        "theoretical_qber_x": 0.007557109910194759,
+        "coherence_l1": 0.9848857801796105,
+        "coherence_loss": 0.015114219820389518,
+        "average_state_fidelity": 0.9962214450449025,
+        "sifted_bits": 5005,
+        "runtime_sec": 3.411181926727295
+      },
+      {
+        "lambda": 0.05,
+        "observed_qber": 0.006498621504529342,
+        "theoretical_qber": 0.0063301413797759165,
+        "observed_qber_z": 0.0,
+        "theoretical_qber_z": 0.0,
+        "observed_qber_x": 0.012751159196290572,
+        "theoretical_qber_x": 0.012660282759551833,
+        "coherence_l1": 0.9746794344808963,
+        "coherence_loss": 0.025320565519103666,
+        "average_state_fidelity": 0.993669858620224,
+        "sifted_bits": 5078,
+        "runtime_sec": 3.646146535873413
+      },
+      {
+        "lambda": 0.1,
+        "observed_qber": 0.015612489991993595,
+        "theoretical_qber": 0.012829175487371558,
+        "observed_qber_z": 0.0,
+        "theoretical_qber_z": 0.0,
+        "observed_qber_x": 0.03055229142185664,
+        "theoretical_qber_x": 0.025658350974743116,
+        "coherence_l1": 0.9486832980505138,
+        "coherence_loss": 0.05131670194948623,
+        "average_state_fidelity": 0.9871708245126283,
+        "sifted_bits": 4996,
+        "runtime_sec": 3.4443979263305664
+      },
+      {
+        "lambda": 0.2,
+        "observed_qber": 0.029574132492113565,
+        "theoretical_qber": 0.026393202250021036,
+        "observed_qber_z": 0.0,
+        "theoretical_qber_z": 0.0,
+        "observed_qber_x": 0.05931198102016608,
+        "theoretical_qber_x": 0.05278640450004207,
+        "coherence_l1": 0.8944271909999159,
+        "coherence_loss": 0.10557280900008414,
+        "average_state_fidelity": 0.9736067977499789,
+        "sifted_bits": 5072,
+        "runtime_sec": 3.200791835784912
+      }
+    ],
+    "plot_path": "results\\exp3_phase_damping_sweep.png"
+  },
+  "experiment_4_thermal_relaxation": {
+    "regimes": [
+      {
+        "regime": "Regime A (T2 = 2*T1, Limit of pure relaxation)",
+        "points": [
+          {
+            "transit_time_us": 0.5,
+            "transit_time_s": 5e-07,
+            "t1_s": 5e-05,
+            "t2_s": 0.0001,
+            "observed_qber": 0.004044489383215369,
+            "theoretical_qber": 0.0037344217645373934,
+            "observed_qber_z": 0.0066090493136756485,
+            "theoretical_qber_z": 0.004975083125415947,
+            "observed_qber_x": 0.0015082956259426848,
+            "theoretical_qber_x": 0.00249376040365884,
+            "average_fidelity": 0.9962655782354622,
+            "runtime_sec": 2.789278268814087
+          },
+          {
+            "transit_time_us": 1.0,
+            "transit_time_s": 1e-06,
+            "t1_s": 5e-05,
+            "t2_s": 0.0001,
+            "observed_qber": 0.007533902561526871,
+            "theoretical_qber": 0.00743787323601916,
+            "observed_qber_z": 0.010384215991692628,
+            "theoretical_qber_z": 0.009900663346622374,
+            "observed_qber_x": 0.0048638132295719845,
+            "theoretical_qber_x": 0.004975083125415947,
+            "average_fidelity": 0.9925621267639808,
+            "runtime_sec": 2.6926941871643066
+          },
+          {
+            "transit_time_us": 2.0,
+            "transit_time_s": 2e-06,
+            "t1_s": 5e-05,
+            "t2_s": 0.0001,
+            "observed_qber": 0.012253063265816454,
+            "theoretical_qber": 0.014752971885230393,
+            "observed_qber_z": 0.01447876447876448,
+            "theoretical_qber_z": 0.01960528042383841,
+            "observed_qber_x": 0.009859885832900882,
+            "theoretical_qber_x": 0.009900663346622374,
+            "average_fidelity": 0.985247028114769,
+            "runtime_sec": 2.734544277191162
+          },
+          {
+            "transit_time_us": 5.0,
+            "transit_time_s": 4.9999999999999996e-06,
+            "t1_s": 5e-05,
+            "t2_s": 0.0001,
+            "observed_qber": 0.03178178178178178,
+            "theoretical_qber": 0.03598328936583159,
+            "observed_qber_z": 0.03927648578811369,
+            "theoretical_qber_z": 0.047581290982020186,
+            "observed_qber_x": 0.024745269286754003,
+            "theoretical_qber_x": 0.024385287749642992,
+            "average_fidelity": 0.964016710634168,
+            "runtime_sec": 2.5942788124084473
+          },
+          {
+            "transit_time_us": 10.0,
+            "transit_time_s": 9.999999999999999e-06,
+            "t1_s": 5e-05,
+            "t2_s": 0.0001,
+            "observed_qber": 0.07220398889169402,
+            "theoretical_qber": 0.06910795722151464,
+            "observed_qber_z": 0.08827856792545366,
+            "theoretical_qber_z": 0.09063462346100909,
+            "observed_qber_x": 0.055150884495317375,
+            "theoretical_qber_x": 0.047581290982020186,
+            "average_fidelity": 0.9308920427784857,
+            "runtime_sec": 2.58292293548584
+          }
+        ]
+      },
+      {
+        "regime": "Regime B (T2 = T1, Balanced relaxation)",
+        "points": [
+          {
+            "transit_time_us": 0.5,
+            "transit_time_s": 5e-07,
+            "t1_s": 5e-05,
+            "t2_s": 5e-05,
+            "observed_qber": 0.005280362081971335,
+            "theoretical_qber": 0.004975083125415947,
+            "observed_qber_z": 0.004577822990844354,
+            "theoretical_qber_z": 0.004975083125415947,
+            "observed_qber_x": 0.005967180507210343,
+            "theoretical_qber_x": 0.004975083125415947,
+            "average_fidelity": 0.9950249168745842,
+            "runtime_sec": 2.4026570320129395
+          },
+          {
+            "transit_time_us": 1.0,
+            "transit_time_s": 1e-06,
+            "t1_s": 5e-05,
+            "t2_s": 5e-05,
+            "observed_qber": 0.010809451985922574,
+            "theoretical_qber": 0.009900663346622374,
+            "observed_qber_z": 0.010055304172951232,
+            "theoretical_qber_z": 0.009900663346622374,
+            "observed_qber_x": 0.011563599798893917,
+            "theoretical_qber_x": 0.009900663346622374,
+            "average_fidelity": 0.990099336653378,
+            "runtime_sec": 2.230587959289551
+          },
+          {
+            "transit_time_us": 2.0,
+            "transit_time_s": 2e-06,
+            "t1_s": 5e-05,
+            "t2_s": 5e-05,
+            "observed_qber": 0.022675736961451247,
+            "theoretical_qber": 0.01960528042383841,
+            "observed_qber_z": 0.022540983606557378,
+            "theoretical_qber_z": 0.01960528042383841,
+            "observed_qber_x": 0.022806147744174516,
+            "theoretical_qber_x": 0.01960528042383841,
+            "average_fidelity": 0.980394719576162,
+            "runtime_sec": 2.3841452598571777
+          },
+          {
+            "transit_time_us": 5.0,
+            "transit_time_s": 4.9999999999999996e-06,
+            "t1_s": 5e-05,
+            "t2_s": 5e-05,
+            "observed_qber": 0.03881793137991485,
+            "theoretical_qber": 0.047581290982020186,
+            "observed_qber_z": 0.04181360201511335,
+            "theoretical_qber_z": 0.047581290982020186,
+            "observed_qber_x": 0.035856573705179286,
+            "theoretical_qber_x": 0.047581290982020186,
+            "average_fidelity": 0.9524187090179799,
+            "runtime_sec": 2.1990833282470703
+          },
+          {
+            "transit_time_us": 10.0,
+            "transit_time_s": 9.999999999999999e-06,
+            "t1_s": 5e-05,
+            "t2_s": 5e-05,
+            "observed_qber": 0.09147713071732066,
+            "theoretical_qber": 0.09063462346100909,
+            "observed_qber_z": 0.09824561403508772,
+            "theoretical_qber_z": 0.09063462346100909,
+            "observed_qber_x": 0.0847457627118644,
+            "theoretical_qber_x": 0.09063462346100909,
+            "average_fidelity": 0.9093653765389909,
+            "runtime_sec": 2.297922134399414
+          }
+        ]
+      },
+      {
+        "regime": "Regime C (T2 = 0.5*T1, Dephasing dominated)",
+        "points": [
+          {
+            "transit_time_us": 0.5,
+            "transit_time_s": 5e-07,
+            "t1_s": 5e-05,
+            "t2_s": 2.5e-05,
+            "observed_qber": 0.007539582809751194,
+            "theoretical_qber": 0.00743787323601916,
+            "observed_qber_z": 0.006030150753768844,
+            "theoretical_qber_z": 0.004975083125415947,
+            "observed_qber_x": 0.00904977375565611,
+            "theoretical_qber_x": 0.009900663346622374,
+            "average_fidelity": 0.9925621267639804,
+            "runtime_sec": 2.574998378753662
+          },
+          {
+            "transit_time_us": 1.0,
+            "transit_time_s": 1e-06,
+            "t1_s": 5e-05,
+            "t2_s": 2.5e-05,
+            "observed_qber": 0.012922465208747515,
+            "theoretical_qber": 0.014752971885230393,
+            "observed_qber_z": 0.009765625,
+            "theoretical_qber_z": 0.009900663346622374,
+            "observed_qber_x": 0.016194331983805668,
+            "theoretical_qber_x": 0.01960528042383841,
+            "average_fidelity": 0.9852470281147695,
+            "runtime_sec": 2.5410983562469482
+          },
+          {
+            "transit_time_us": 2.0,
+            "transit_time_s": 2e-06,
+            "t1_s": 5e-05,
+            "t2_s": 2.5e-05,
+            "observed_qber": 0.03193916349809886,
+            "theoretical_qber": 0.029023553615260267,
+            "observed_qber_z": 0.019895287958115182,
+            "theoretical_qber_z": 0.01960528042383841,
+            "observed_qber_x": 0.043243243243243246,
+            "theoretical_qber_x": 0.03844182680668212,
+            "average_fidelity": 0.9709764463847393,
+            "runtime_sec": 2.1986660957336426
+          },
+          {
+            "transit_time_us": 5.0,
+            "transit_time_s": 4.9999999999999996e-06,
+            "t1_s": 5e-05,
+            "t2_s": 2.5e-05,
+            "observed_qber": 0.06630380999505195,
+            "theoretical_qber": 0.06910795722151464,
+            "observed_qber_z": 0.04016268429079817,
+            "theoretical_qber_z": 0.047581290982020186,
+            "observed_qber_x": 0.0910843373493976,
+            "theoretical_qber_x": 0.09063462346100909,
+            "average_fidelity": 0.930892042778485,
+            "runtime_sec": 2.248978614807129
+          },
+          {
+            "transit_time_us": 10.0,
+            "transit_time_s": 9.999999999999999e-06,
+            "t1_s": 5e-05,
+            "t2_s": 2.5e-05,
+            "observed_qber": 0.11467889908256881,
+            "theoretical_qber": 0.1277373002215947,
+            "observed_qber_z": 0.08329022245214693,
+            "theoretical_qber_z": 0.09063462346100909,
+            "observed_qber_x": 0.14515318935208438,
+            "theoretical_qber_x": 0.16483997698218034,
+            "average_fidelity": 0.8722626997784044,
+            "runtime_sec": 2.3364980220794678
+          }
+        ]
+      }
+    ],
+    "plot_path": "results\\exp4_thermal_relaxation.png"
+  },
+  "experiment_5_noise_and_eavesdropping": {
+    "conditions": [
+      {
+        "condition": "Condition A: Ideal Channel",
+        "observed_qber": 0.0,
+        "observed_qber_z": 0.0,
+        "observed_qber_x": 0.0,
+        "eve_info_gain": 0.0,
+        "aborted": false,
+        "runtime_sec": 3.298680543899536
+      },
+      {
+        "condition": "Condition B: Noise Only (p=0.04)",
+        "observed_qber": 0.017303889255108767,
+        "observed_qber_z": 0.018187830687830687,
+        "observed_qber_x": 0.0164257555847569,
+        "eve_info_gain": 0.0,
+        "aborted": false,
+        "runtime_sec": 3.5726840496063232
+      },
+      {
+        "condition": "Condition C1: Intercept-Resend Only (alpha=0.40)",
+        "observed_qber": 0.10684699915469147,
+        "observed_qber_z": 0.10522742701968771,
+        "observed_qber_x": 0.10845402492421691,
+        "eve_info_gain": 0.02904940554533142,
+        "aborted": false,
+        "runtime_sec": 4.476604461669922
+      },
+      {
+        "condition": "Condition C2: Unitary Probe Only (theta=pi/10)",
+        "observed_qber": 0.09116666666666666,
+        "observed_qber_z": 0.08701428096977748,
+        "observed_qber_x": 0.09534961525593844,
+        "eve_info_gain": 0.26602405867424206,
+        "aborted": false,
+        "runtime_sec": 4.067816734313965
+      },
+      {
+        "condition": "Condition D1: Noise + Intercept-Resend",
+        "observed_qber": 0.11390284757118928,
+        "observed_qber_z": 0.1183939601921757,
+        "observed_qber_x": 0.10962041884816753,
+        "eve_info_gain": 0.02904940554533142,
+        "aborted": true,
+        "runtime_sec": 4.813655376434326
+      },
+      {
+        "condition": "Condition D2: Noise + Unitary Probe",
+        "observed_qber": 0.11184755592377796,
+        "observed_qber_z": 0.10914552736982644,
+        "observed_qber_x": 0.11451135241855874,
+        "eve_info_gain": 0.26602405867424206,
+        "aborted": true,
+        "runtime_sec": 4.710225820541382
+      }
+    ],
+    "theoretical_compounding": {
+      "noise_plus_intercept_resend": 0.116,
+      "noise_plus_unitary_probe": 0.11167184270002523
+    },
+    "plot_path": "results\\exp5_noise_vs_eavesdropping.png"
+  }
+}

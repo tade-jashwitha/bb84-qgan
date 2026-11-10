@@ -1,0 +1,64 @@
+{
+  "milestone": "4A",
+  "verification_topic": "Execution Safety, Resource Estimation, and Operational Readiness",
+  "verified_at_utc": "2026-11-10T14:10:00Z",
+  "execution_specification": {
+    "command": "python experiments/train_milestone4a.py --execute",
+    "working_directory": "C:\\Users\\lenovo\\.gemini\\antigravity\\worktrees\\bb84-qgan-research\\nisq_noise_modelling",
+    "python_interpreter": "3.11.9",
+    "cuda_device": "NVIDIA GeForce RTX 3050 Laptop GPU (Device 0)",
+    "cuda_version": "12.1",
+    "pytorch_version": "2.5.1+cu121"
+  },
+  "runtime_estimate": {
+    "total_epochs": 200,
+    "batches_per_epoch": 6,
+    "neural_forward_backward_time_per_epoch_sec": 0.09,
+    "total_neural_training_time_sec": 18.0,
+    "physical_validation_evaluations": 20,
+    "simulations_per_validation_event": 64,
+    "pulses_per_simulation": 2000,
+    "time_per_simulation_sec": 0.08,
+    "time_per_validation_event_sec": 5.12,
+    "total_physical_validation_time_sec": 102.4,
+    "counterfactual_and_io_overhead_sec": 9.6,
+    "estimated_total_runtime_seconds": 130.0,
+    "estimated_total_runtime_minutes": 2.17
+  },
+  "resource_estimates": {
+    "gpu_vram": {
+      "model_parameters_mb": 0.25,
+      "activations_and_gradients_mb": 9.5,
+      "cuda_context_overhead_mb": 350.0,
+      "estimated_peak_allocated_mb": 45.0,
+      "estimated_peak_reserved_mb": 512.0,
+      "available_vram_mb": 6144.0,
+      "headroom_percentage": 91.66
+    },
+    "disk_storage": {
+      "checkpoints": {
+        "cgan_m4a_lexicographic_best.pt_mb": 1.2,
+        "cgan_m4a_max_feasibility.pt_mb": 1.2,
+        "cgan_m4a_max_information.pt_mb": 1.2,
+        "cgan_m4a_balanced_pareto.pt_mb": 1.2,
+        "cgan_m4a_latest.pt_mb": 1.2,
+        "total_checkpoints_mb": 6.0
+      },
+      "telemetry_logs": {
+        "cgan_m4a_training_history.json_mb": 0.25,
+        "cgan_m4a_validation_evaluations.json_mb": 0.45,
+        "total_logs_mb": 0.70
+      },
+      "total_disk_required_mb": 6.70,
+      "available_disk_gb": "> 20 GB"
+    }
+  },
+  "resilience_and_recovery": {
+    "resume_capability": "Checkpoints serialize generator, discriminator, both optimizers, epoch index, history, and config metadata",
+    "checkpoint_directory": "checkpoints/milestone4a",
+    "results_directory": "results/milestone4a",
+    "failure_recovery": "Latest state is written atomically to cgan_m4a_latest.pt at each physical evaluation epoch; interruption does not overwrite historical pilot checkpoints",
+    "artifact_backup_strategy": "Pilot checkpoints remain in checkpoints/ (isolated from checkpoints/milestone4a/); dataset is read-only"
+  }
+}
+

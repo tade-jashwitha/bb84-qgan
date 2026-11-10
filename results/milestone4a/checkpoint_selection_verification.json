@@ -1,0 +1,64 @@
+{
+  "milestone": "4A",
+  "verification_topic": "Checkpoint Selection Logic",
+  "verified_at_utc": "2026-11-10T14:10:00Z",
+  "source_script": "experiments/train_milestone4a.py",
+  "methods": {
+    "lexicographic_best": {
+      "target_file": "checkpoints/milestone4a/cgan_m4a_lexicographic_best.pt",
+      "priority_hierarchy": [
+        "Priority 1 (Hard Gate): Physical validity R_val == 1.0 (exact bounds on theta, alpha, beta)",
+        "Priority 2 (Hard Gate): Zero observed aborts abort_count == 0 across all validation runs",
+        "Priority 3 (Anti-Collapse Guard): std_theta_rad >= 0.003 rad when probe candidates >= 4",
+        "Priority 4 (Screening Gate): Feasibility yield Y_feas >= 0.80 (Wilson 95% UCB <= Q_budget)",
+        "Priority 5 (Primary Objective): Maximize mean mutual information on feasible policies I_feas"
+      ],
+      "tie_breaker": "Higher feasibility yield Y_feas, then lower abort_rate",
+      "null_policy_handling": "Null policies are strictly excluded from mutual information numerator and denominator (I_AE(Null) = 0.0)",
+      "zero_qualified_behavior": {
+        "persisted_checkpoint": null,
+        "metadata_flag": "qualified_lexicographic_found = False",
+        "action": "cgan_m4a_lexicographic_best.pt is NOT created; anchor checkpoints are used for post-hoc analysis"
+      }
+    },
+    "max_feasibility_best": {
+      "target_file": "checkpoints/milestone4a/cgan_m4a_max_feasibility.pt",
+      "hard_gate": "Zero observed aborts (abort_count == 0)",
+      "objective": "Maximize feasibility yield Y_feas",
+      "tie_breaker": "Higher mean mutual information I_feas",
+      "purpose": "Pareto anchor representing maximum operational stealth"
+    },
+    "max_information_best": {
+      "target_file": "checkpoints/milestone4a/cgan_m4a_max_information.pt",
+      "hard_gate": "Zero observed aborts (abort_count == 0)",
+      "objective": "Maximize mean mutual information I_feas",
+      "tie_breaker": "Higher feasibility yield Y_feas",
+      "purpose": "Pareto anchor representing maximum intelligence extraction"
+    },
+    "balanced_pareto_best": {
+      "target_file": "checkpoints/milestone4a/cgan_m4a_balanced_pareto.pt",
+      "hard_gate": "Zero observed aborts (abort_count == 0)",
+      "objective": "Maximize scalar trade-off product S = Y_feas * I_feas",
+      "purpose": "Automated operational compromise on the empirical trade-off surface"
+    },
+    "full_pareto_frontier": {
+      "definition": "Non-dominated set of (Y_feas, I_feas) pairs where candidate A dominates B iff Y_A >= Y_B and I_A >= I_B and (Y_A > Y_B or I_A > I_B)",
+      "storage": "Serialized in full into results/milestone4a/cgan_m4a_training_history.json under metadata.pareto_frontier",
+      "separation_from_scalar": "The full frontier preserves all mutually non-dominated models without arbitrary scalar scalarization weights"
+    }
+  },
+  "zero_feasible_policies_behavior": {
+    "mean_info_gain_feas": 0.0,
+    "median_info_gain_feas": 0.0,
+    "feasibility_yield": 0.0,
+    "lexicographic_qualified": false,
+    "outcome": "All candidate metrics set to 0.0; no checkpoint qualified under lexicographic gate"
+  },
+  "test_condition_isolation_confirmation": {
+    "validation_conditions_evaluated": ["C17", "C18", "C19", "C20"],
+    "test_conditions_quarantined": ["C21", "C22", "C23", "C24"],
+    "code_enforcement": "experiments/train_milestone4a.py lines 367-370: val_conds = [c for c in all_conds if c.partition == 'val']; assert len(val_conds) == 4",
+    "verified_leakage": false
+  }
+}
+

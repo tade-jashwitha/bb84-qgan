@@ -1,0 +1,233 @@
+{
+  "experiment_1_ideal": {
+    "num_signals": 10000,
+    "sifted_key_length": 4982,
+    "sifting_efficiency": 0.4982,
+    "error_count": 0,
+    "qber": 0.0,
+    "qber_z": 0.0,
+    "qber_x": 0.0,
+    "elapsed_sec": 2.521256685256958
+  },
+  "experiment_2_full_intercept": {
+    "num_signals": 20000,
+    "sifted_key_length": 9911,
+    "sifting_efficiency": 0.49555,
+    "error_count": 2464,
+    "qber": 0.2486126526082131,
+    "theoretical_qber": 0.25,
+    "qber_z": 0.24296828246558946,
+    "qber_x": 0.25438954675377706,
+    "eve_theoretical_info_bits": 0.18872187554086717,
+    "eve_empirical_info_bits": 0.19595702502273737,
+    "intercept_count": 20000,
+    "intercept_ratio": 1.0,
+    "elapsed_sec": 10.348535060882568
+  },
+  "experiment_3_partial_intercept": {
+    "data": [
+      {
+        "alpha": 0.0,
+        "observed_qber": 0.0,
+        "theoretical_qber": 0.0,
+        "observed_info_gain": 0.0,
+        "theoretical_info_gain": 0.0,
+        "intercept_count": 0,
+        "sifted_bits": 4955,
+        "runtime_sec": 2.8051698207855225
+      },
+      {
+        "alpha": 0.2,
+        "observed_qber": 0.04945717732207479,
+        "theoretical_qber": 0.05,
+        "observed_info_gain": 0.006672048604895342,
+        "theoretical_info_gain": 0.007225546012191719,
+        "intercept_count": 2013,
+        "sifted_bits": 4974,
+        "runtime_sec": 3.208477735519409
+      },
+      {
+        "alpha": 0.4,
+        "observed_qber": 0.09192870018025236,
+        "theoretical_qber": 0.1,
+        "observed_info_gain": 0.03319744625008836,
+        "theoretical_info_gain": 0.02904940554533142,
+        "intercept_count": 4021,
+        "sifted_bits": 4993,
+        "runtime_sec": 3.854431629180908
+      },
+      {
+        "alpha": 0.6,
+        "observed_qber": 0.1519136408243376,
+        "theoretical_qber": 0.15,
+        "observed_info_gain": 0.06809755326326439,
+        "theoretical_info_gain": 0.06593194462450902,
+        "intercept_count": 5980,
+        "sifted_bits": 5095,
+        "runtime_sec": 4.10730242729187
+      },
+      {
+        "alpha": 0.8,
+        "observed_qber": 0.20513841864170484,
+        "theoretical_qber": 0.2,
+        "observed_info_gain": 0.11866041502543423,
+        "theoretical_info_gain": 0.1187091007693073,
+        "intercept_count": 7966,
+        "sifted_bits": 5021,
+        "runtime_sec": 4.374774932861328
+      },
+      {
+        "alpha": 1.0,
+        "observed_qber": 0.2516818361693708,
+        "theoretical_qber": 0.25,
+        "observed_info_gain": 0.18856511041165525,
+        "theoretical_info_gain": 0.18872187554086717,
+        "intercept_count": 10000,
+        "sifted_bits": 5054,
+        "runtime_sec": 4.740906238555908
+      }
+    ],
+    "plot_path": "results\\exp3_partial_intercept_resend.png"
+  },
+  "experiment_4_basis_bias": {
+    "data": [
+      {
+        "beta": 0.0,
+        "qber_total": 0.2512871287128713,
+        "qber_z": 0.4935822637106184,
+        "theo_qber_z": 0.5,
+        "qber_x": 0.0,
+        "theo_qber_x": 0.0,
+        "eve_z_fraction": 0.0,
+        "eve_x_fraction": 1.0,
+        "observed_info_gain": 0.17837608214547573,
+        "theoretical_info_gain": 0.5,
+        "runtime_sec": 5.4237446784973145
+      },
+      {
+        "beta": 0.25,
+        "qber_total": 0.2522759457819138,
+        "qber_z": 0.38195548489666137,
+        "theo_qber_z": 0.375,
+        "qber_x": 0.11784095591264936,
+        "theo_qber_x": 0.125,
+        "eve_z_fraction": 0.2497,
+        "eve_x_fraction": 0.7503,
+        "observed_info_gain": 0.20105227021813943,
+        "theoretical_info_gain": 0.25100077693771927,
+        "runtime_sec": 5.503716468811035
+      },
+      {
+        "beta": 0.5,
+        "qber_total": 0.24024929634097306,
+        "qber_z": 0.2391919191919192,
+        "theo_qber_z": 0.25,
+        "qber_x": 0.24129651860744297,
+        "theo_qber_x": 0.25,
+        "eve_z_fraction": 0.5033,
+        "eve_x_fraction": 0.4967,
+        "observed_info_gain": 0.20487949025596452,
+        "theoretical_info_gain": 0.18872187554086717,
+        "runtime_sec": 5.3222270011901855
+      },
+      {
+        "beta": 0.75,
+        "qber_total": 0.2581818181818182,
+        "qber_z": 0.1264274061990212,
+        "theo_qber_z": 0.125,
+        "qber_x": 0.3875100080064051,
+        "theo_qber_x": 0.375,
+        "eve_z_fraction": 0.7507,
+        "eve_x_fraction": 0.2493,
+        "observed_info_gain": 0.18222363314411893,
+        "theoretical_info_gain": 0.25100077693771927,
+        "runtime_sec": 4.991661548614502
+      },
+      {
+        "beta": 1.0,
+        "qber_total": 0.2587606414571372,
+        "qber_z": 0.0,
+        "theo_qber_z": 0.0,
+        "qber_x": 0.5069821567106284,
+        "theo_qber_x": 0.5,
+        "eve_z_fraction": 1.0,
+        "eve_x_fraction": 0.0,
+        "observed_info_gain": 0.18459054656735852,
+        "theoretical_info_gain": 0.5,
+        "runtime_sec": 4.94829249382019
+      }
+    ],
+    "plot_path": "results\\exp4_basis_bias_analysis.png"
+  },
+  "experiment_5_unitary_probe": {
+    "data": [
+      {
+        "theta_rad": 0.0,
+        "theta_deg": 0.0,
+        "observed_qber": 0.0,
+        "theoretical_disturbance": 0.0,
+        "qber_z": 0.0,
+        "qber_x": 0.0,
+        "theoretical_info_gain": 0.0,
+        "average_carrier_fidelity": 0.9999999999999998,
+        "runtime_sec": 2.6271913051605225
+      },
+      {
+        "theta_rad": 0.1308996938995747,
+        "theta_deg": 7.499999999999999,
+        "observed_qber": 0.016471175442974793,
+        "theoretical_disturbance": 0.008518543427732925,
+        "qber_z": 0.01273560876209883,
+        "qber_x": 0.020058708414872797,
+        "theoretical_info_gain": 0.04887560177827521,
+        "average_carrier_fidelity": 0.9829629131445339,
+        "runtime_sec": 2.5625405311584473
+      },
+      {
+        "theta_rad": 0.2617993877991494,
+        "theta_deg": 14.999999999999998,
+        "observed_qber": 0.07549504950495049,
+        "theoretical_disturbance": 0.03349364905389033,
+        "qber_z": 0.07570509648688768,
+        "qber_x": 0.07528479445269935,
+        "theoretical_info_gain": 0.18872187554086717,
+        "average_carrier_fidelity": 0.9330127018922193,
+        "runtime_sec": 2.7910561561584473
+      },
+      {
+        "theta_rad": 0.39269908169872414,
+        "theta_deg": 22.5,
+        "observed_qber": 0.14798994974874372,
+        "theoretical_disturbance": 0.07322330470336312,
+        "qber_z": 0.15287588294651866,
+        "qber_x": 0.14314314314314314,
+        "theoretical_info_gain": 0.39912396330714384,
+        "average_carrier_fidelity": 0.8535533905932735,
+        "runtime_sec": 2.430389165878296
+      },
+      {
+        "theta_rad": 0.5235987755982988,
+        "theta_deg": 29.999999999999996,
+        "observed_qber": 0.2581528503858601,
+        "theoretical_disturbance": 0.12499999999999997,
+        "qber_z": 0.2678926441351889,
+        "qber_x": 0.2483790523690773,
+        "theoretical_info_gain": 0.64542109733473,
+        "average_carrier_fidelity": 0.75,
+        "runtime_sec": 2.76371169090271
+      },
+      {
+        "theta_rad": 0.7853981633974483,
+        "theta_deg": 45.0,
+        "observed_qber": 0.5088473205257836,
+        "theoretical_disturbance": 0.25000000000000006,
+        "qber_z": 0.5149974580579563,
+        "qber_x": 0.5027652086475616,
+        "theoretical_info_gain": 1.0,
+        "average_carrier_fidelity": 0.5,
+        "runtime_sec": 2.53265118598938
+      }
+    ],
+    "plot_path": "results\\exp5_unitary_probe_tradeoff.png"
+  }
+}

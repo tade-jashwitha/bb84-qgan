@@ -1,0 +1,20 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Matplotlib font cache / runtime generated caches
+results/fontlist-*.json
+.cache/
+
+# Intermediate / scratch audit files
+scratch/
+
+# Editor / IDE configuration
+.vscode/
+.idea/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+

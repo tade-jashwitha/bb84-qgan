@@ -1,0 +1,197 @@
+{
+  "migration_completed_at": "2026-11-10T19:57:08.617930",
+  "all_verified": true,
+  "total_files": 19,
+  "files": [
+    {
+      "path": "results/full_training_dataset.json",
+      "action": "COPIED_NEW",
+      "is_critical": true,
+      "src_sha256": "07C03E810470B3376EB48C51C13138DCF347D915F78E911F74A81E96F27CFB80",
+      "dst_pre_sha256": null,
+      "dst_post_sha256": "07C03E810470B3376EB48C51C13138DCF347D915F78E911F74A81E96F27CFB80",
+      "verified": true,
+      "timestamp": "2026-11-10T19:57:08.158155"
+    },
+    {
+      "path": "checkpoints/cgan_pilot_best.pt",
+      "action": "COPIED_NEW",
+      "is_critical": true,
+      "src_sha256": "F4050379F065E9FE3106A23D746396215EBF128F52249220013B07411ED827AA",
+      "dst_pre_sha256": null,
+      "dst_post_sha256": "F4050379F065E9FE3106A23D746396215EBF128F52249220013B07411ED827AA",
+      "verified": true,
+      "timestamp": "2026-11-10T19:57:08.188355"
+    },
+    {
+      "path": "checkpoints/cgan_pilot_latest.pt",
+      "action": "COPIED_NEW",
+      "is_critical": true,
+      "src_sha256": "0BAA0DBD0BE0FB4D75E752AFD2EB1E86045CBCDFB4D1468DA27B0A2BF618E1D5",
+      "dst_pre_sha256": null,
+      "dst_post_sha256": "0BAA0DBD0BE0FB4D75E752AFD2EB1E86045CBCDFB4D1468DA27B0A2BF618E1D5",
+      "verified": true,
+      "timestamp": "2026-11-10T19:57:08.207740"
+    },
+    {
+      "path": "checkpoints/cgan_best.pt",
+      "action": "COPIED_NEW",
+      "is_critical": false,
+      "src_sha256": "F4050379F065E9FE3106A23D746396215EBF128F52249220013B07411ED827AA",
+      "dst_pre_sha256": null,
+      "dst_post_sha256": "F4050379F065E9FE3106A23D746396215EBF128F52249220013B07411ED827AA",
+      "verified": true,
+      "timestamp": "2026-11-10T19:57:08.239585"
+    },
+    {
+      "path": "checkpoints/cgan_latest.pt",
+      "action": "COPIED_NEW",
+      "is_critical": false,
+      "src_sha256": "606CB0B34D6A8102DED048953A51DAA3C58187544EB96374505EF539C8E4B57D",
+      "dst_pre_sha256": null,
+      "dst_post_sha256": "606CB0B34D6A8102DED048953A51DAA3C58187544EB96374505EF539C8E4B57D",
+      "verified": true,
+      "timestamp": "2026-11-10T19:57:08.275241"
+    },
+    {
+      "path": "experiments/train_milestone4a.py",
+      "action": "UPDATED",
+      "is_critical": true,
+      "src_sha256": "BA5787A8D4A24BA32358CD1B6B0A7C1A89A570466EBDD838D193052038B9F0B7",
+      "dst_pre_sha256": "6EBCC9B47B370385FFD32382A96A75C0DF6C4FC24BF53988E16CF73E1A58CB9B",
+      "dst_post_sha256": "BA5787A8D4A24BA32358CD1B6B0A7C1A89A570466EBDD838D193052038B9F0B7",
+      "verified": true,
+      "timestamp": "2026-11-10T19:57:08.307725"
+    },
+    {
+      "path": "experiments/audit_pilot.py",
+      "action": "COPIED_NEW",
+      "is_critical": false,
+      "src_sha256": "87924CFFED3D9F9AC295A77758B2B085F96E45EF6B5978BA9019E13F02865928",
+      "dst_pre_sha256": null,
+      "dst_post_sha256": "87924CFFED3D9F9AC295A77758B2B085F96E45EF6B5978BA9019E13F02865928",
+      "verified": true,
+      "timestamp": "2026-11-10T19:57:08.307725"
+    },
+    {
+      "path": "tests/test_cgan_pipeline.py",
+      "action": "UPDATED",
+      "is_critical": true,
+      "src_sha256": "07AB5E9838E3B44353425F7F2106672EFA83F416DE8288CF06F8CA5950173CDF",
+      "dst_pre_sha256": "CA7B646571A6B2C26E6A2303E63112A096D6E99D9B2D8EBCFD04A92CF693E482",
+      "dst_post_sha256": "07AB5E9838E3B44353425F7F2106672EFA83F416DE8288CF06F8CA5950173CDF",
+      "verified": true,
+      "timestamp": "2026-11-10T19:57:08.356639"
+    },
+    {
+      "path": "results/milestone4a/frozen_training_config.json",
+      "action": "COPIED_NEW",
+      "is_critical": true,
+      "src_sha256": "7A555F3D553BB262BA401BCC5779D22A111BED316556361E7125AB1D8B8C4244",
+      "dst_pre_sha256": null,
+      "dst_post_sha256": "7A555F3D553BB262BA401BCC5779D22A111BED316556361E7125AB1D8B8C4244",
+      "verified": true,
+      "timestamp": "2026-11-10T19:57:08.374208"
+    },
+    {
+      "path": "results/milestone4a/checkpoint_selection_verification.json",
+      "action": "COPIED_NEW",
+      "is_critical": true,
+      "src_sha256": "5C72A0EE0B87359900770A34A9A20305CA16E08ADDDD72FC21120F332988CDAB",
+      "dst_pre_sha256": null,
+      "dst_post_sha256": "5C72A0EE0B87359900770A34A9A20305CA16E08ADDDD72FC21120F332988CDAB",
+      "verified": true,
+      "timestamp": "2026-11-10T19:57:08.408759"
+    },
+    {
+      "path": "results/milestone4a/data_isolation_verification.json",
+      "action": "COPIED_NEW",
+      "is_critical": true,
+      "src_sha256": "00C75A3498F7540EBE9696AAAE60DE99AB18A12FB4147DD3D3DB4F4D6313C1E2",
+      "dst_pre_sha256": null,
+      "dst_post_sha256": "00C75A3498F7540EBE9696AAAE60DE99AB18A12FB4147DD3D3DB4F4D6313C1E2",
+      "verified": true,
+      "timestamp": "2026-11-10T19:57:08.428509"
+    },
+    {
+      "path": "results/milestone4a/execution_estimate.json",
+      "action": "COPIED_NEW",
+      "is_critical": true,
+      "src_sha256": "D3D06005C3C741ADD79E920B5F9365EED5D79DCA397BD8197498D4328D41446E",
+      "dst_pre_sha256": null,
+      "dst_post_sha256": "D3D06005C3C741ADD79E920B5F9365EED5D79DCA397BD8197498D4328D41446E",
+      "verified": true,
+      "timestamp": "2026-11-10T19:57:08.449411"
+    },
+    {
+      "path": "docs/M4A_FINAL_EXECUTION_AUTHORIZATION_REVIEW.md",
+      "action": "COPIED_NEW",
+      "is_critical": true,
+      "src_sha256": "4E3EA80EF9AC3C53B00EFDB33129F02DF2EFAF7E411FAD747955BCD4536A56A0",
+      "dst_pre_sha256": null,
+      "dst_post_sha256": "4E3EA80EF9AC3C53B00EFDB33129F02DF2EFAF7E411FAD747955BCD4536A56A0",
+      "verified": true,
+      "timestamp": "2026-11-10T19:57:08.476790"
+    },
+    {
+      "path": "M3_STAGE_C_FINAL_PRETRAINING_AUDIT_REPORT.md",
+      "action": "COPIED_NEW",
+      "is_critical": true,
+      "src_sha256": "7E277945B1CD8BC13415489892C2F2C27157A0F17C4AB7AECECEF2EC9139DC57",
+      "dst_pre_sha256": null,
+      "dst_post_sha256": "7E277945B1CD8BC13415489892C2F2C27157A0F17C4AB7AECECEF2EC9139DC57",
+      "verified": true,
+      "timestamp": "2026-11-10T19:57:08.499765"
+    },
+    {
+      "path": "results/full_dataset_benchmark_metrics.json",
+      "action": "UPDATED",
+      "is_critical": false,
+      "src_sha256": "EAE999045339534107CC40B64135AF8F46F2446DF9552BD45D831FCBBBB4F70F",
+      "dst_pre_sha256": "426169C1B194A08A449993C9D27843552D22CA7CCA627DDE3A5965C93C0EA0E1",
+      "dst_post_sha256": "EAE999045339534107CC40B64135AF8F46F2446DF9552BD45D831FCBBBB4F70F",
+      "verified": true,
+      "timestamp": "2026-11-10T19:57:08.523856"
+    },
+    {
+      "path": "results/cgan_pilot_training_history.json",
+      "action": "UPDATED",
+      "is_critical": false,
+      "src_sha256": "B26A55D569984F299381639D3152781C2E0F4925337C970ADC15D33C5DF4A06A",
+      "dst_pre_sha256": "A4CEF469D1CE1964F01E56C9E925248BAC08D7A254E562F2B995CE625BB3CE99",
+      "dst_post_sha256": "B26A55D569984F299381639D3152781C2E0F4925337C970ADC15D33C5DF4A06A",
+      "verified": true,
+      "timestamp": "2026-11-10T19:57:08.530002"
+    },
+    {
+      "path": "results/cgan_pilot_validation_evaluation.json",
+      "action": "UPDATED",
+      "is_critical": false,
+      "src_sha256": "DAD4AC00ED22FCAAE56F92EF1177078F5FEDBBEDFCBB7F5AEB1098B484F3EC9C",
+      "dst_pre_sha256": "08ADFB3C4743D2FE9CA4692FBC98A7A30EF9BB8CB71645D88B6E3CF03849971B",
+      "dst_post_sha256": "DAD4AC00ED22FCAAE56F92EF1177078F5FEDBBEDFCBB7F5AEB1098B484F3EC9C",
+      "verified": true,
+      "timestamp": "2026-11-10T19:57:08.552476"
+    },
+    {
+      "path": "PILOT_VALIDATION_REPORT.md",
+      "action": "UPDATED",
+      "is_critical": false,
+      "src_sha256": "34B063349B9149D93E68E2A8DF901A410EB47CD0478BF33844C20F2279ABEE50",
+      "dst_pre_sha256": "A146E0D8A0A1F72C3AEC656456F570F92E49CB6C5390EE619CF59ABEEB457A1B",
+      "dst_post_sha256": "34B063349B9149D93E68E2A8DF901A410EB47CD0478BF33844C20F2279ABEE50",
+      "verified": true,
+      "timestamp": "2026-11-10T19:57:08.580492"
+    },
+    {
+      "path": "MILESTONE_2_REPORT.md",
+      "action": "UPDATED",
+      "is_critical": false,
+      "src_sha256": "F38E095EF7889A131E40AA708D8EA1B16E155A398042090ED0269CA0AA70C842",
+      "dst_pre_sha256": "4773751F3D16AD632AD6D3241CE59CC5D9168B23EB9B2B1ECDCD1D464E249F10",
+      "dst_post_sha256": "F38E095EF7889A131E40AA708D8EA1B16E155A398042090ED0269CA0AA70C842",
+      "verified": true,
+      "timestamp": "2026-11-10T19:57:08.615947"
+    }
+  ]
+}
