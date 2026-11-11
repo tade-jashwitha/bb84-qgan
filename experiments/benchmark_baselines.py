@@ -123,7 +123,47 @@ class GridSearchPolicyEngine:
 
 
 class AnalyticalProbePolicyEngine:
-    """Baseline 3: Closed-form theoretical probe heuristic with local parameter perturbation."""
+    """Baseline 4: Closed-form theoretical probe heuristic with local parameter perturbation."""
+
+    @staticmethod
+    def compute_optimal_angle(q_budget: float, gamma_noise_hat: float) -> Tuple[float, float]:
+        """Compute theoretical target disturbance D* and optimal coupling angle theta_E*.
+
+        Derivation:
+            1. Channel Error Compounding:
+               Under depolarizing channel noise gamma_hat and independent probe disturbance D,
+               the total observed QBER is compounded as:
+                   Q = gamma_hat * (1 - D) + (1 - gamma_hat) * D = gamma_hat + D * (1 - 2 * gamma_hat)
+               Setting expected Q = Q_budget to maximize Eve's disturbance while targeting stealth:
+                   Q_budget = gamma_hat + D* * (1 - 2 * gamma_hat)
+                   D* = (Q_budget - gamma_hat) / (1 - 2 * gamma_hat)
+               If Q_budget <= gamma_hat, the channel noise alone saturates the budget, yielding D* = 0.
+
+            2. Fuchs-Peres-Brandt Probe Inverse Mapping:
+               Under the 2-qubit Fuchs-Peres-Brandt entangling unitary U_E(theta_E) implemented in
+               `src.bb84.attacks.FuchsPeresBrandtProbe`, Bob's reduced density matrix across all BB84
+               states satisfies rho_A = cos^2(theta_E)|psi><psi| + sin^2(theta_E)|psi_perp><psi_perp|,
+               inducing symmetric disturbance:
+                   D(theta_E) = sin^2(theta_E)
+               Inverting D* = sin^2(theta_E*) over the parameter domain theta_E in [0, pi/4]:
+                   sin(theta_E*) = sqrt(D*)
+                   theta_E* = arcsin(sqrt(D*))
+               Note: For theta_E in [0, pi/4], max disturbance is sin^2(pi/4) = 0.5. Hence D* is
+               clamped to [0.0, 0.5] before computing the principal arcsine.
+
+        Args:
+            q_budget: Protocol security abort threshold Q_budget in [0.0, 1.0].
+            gamma_noise_hat: Eve's estimated ambient channel QBER in [0.0, 1.0].
+
+        Returns:
+            Tuple[float, float]: (theta_star_rad, d_target)
+        """
+        denom = max(1e-4, 1.0 - 2.0 * gamma_noise_hat)
+        d_target = max(0.0, (q_budget - gamma_noise_hat) / denom)
+        d_clamped = min(0.5, d_target)
+        arg = min(1.0, math.sqrt(max(0.0, d_clamped)))
+        theta_star = float(np.clip(math.asin(arg), 0.0, math.pi / 4.0))
+        return theta_star, d_target
 
     def propose_candidate_configurations(
         self,
@@ -132,16 +172,10 @@ class AnalyticalProbePolicyEngine:
         seed: Optional[int] = None,
     ) -> List[AttackConfiguration]:
         """Propose K perturbed candidates around the theoretical optimal coupling angle."""
-        gamma_hat = condition.gamma_noise_hat
-        q_bud = condition.q_budget
-
-        # Analytical disturbance target: D* = max(0, (Q_budget - gamma_hat) / (1 - 2*gamma_hat))
-        denom = max(1e-4, 1.0 - 2.0 * gamma_hat)
-        d_target = max(0.0, (q_bud - gamma_hat) / denom)
-        # theta_E* = 0.5 * arcsin(sqrt(2 * D*))
-        arg = min(1.0, math.sqrt(min(1.0, 2.0 * d_target)))
-        theta_star = 0.5 * math.asin(arg)
-        theta_star = float(np.clip(theta_star, 0.0, math.pi / 4.0))
+        theta_star, _ = self.compute_optimal_angle(
+            q_budget=condition.q_budget,
+            gamma_noise_hat=condition.gamma_noise_hat,
+        )
 
         # Generate K perturbations around theta_star
         offsets = np.linspace(-0.15, +0.15, num_candidates)
@@ -262,13 +296,17 @@ def evaluate_method_episode(
 
 
 def run_comprehensive_benchmark(
-    checkpoint_path: str = "checkpoints/cgan_best.pt",
+    checkpoint_path: Optional[str] = None,
     output_path: str = "results/cgan_benchmark_comparison.json",
     eval_seeds: tuple = (901, 902, 903, 904, 905),
     query_budget_k: int = 16,
     n_pulses: int = 2000,
 ) -> Dict[str, Any]:
     """Execute complete comparative benchmark across all 4 methods and held-out test conditions."""
+    if checkpoint_path is None:
+        m4a_best = "checkpoints/milestone4a/cgan_m4a_lexicographic_best.pt"
+        checkpoint_path = m4a_best if os.path.exists(m4a_best) else "checkpoints/cgan_best.pt"
+
     print("=" * 80)
     print("M3 STAGE C: COMPARATIVE BENCHMARKING (cGAN vs 3 CLASSICAL BASELINES)")
     print("=" * 80)
@@ -405,5 +443,10 @@ def run_comprehensive_benchmark(
 
 
 if __name__ == "__main__":
-    run_comprehensive_benchmark()
+    import argparse
+    parser = argparse.ArgumentParser(description="Benchmark cGAN Policy Engine against classical baselines.")
+    parser.add_argument("--checkpoint", type=str, default=None, help="Path to cGAN generator checkpoint")
+    parser.add_argument("--output", type=str, default="results/cgan_benchmark_comparison.json", help="Path to output JSON")
+    args = parser.parse_args()
+    run_comprehensive_benchmark(checkpoint_path=args.checkpoint, output_path=args.output)
 
