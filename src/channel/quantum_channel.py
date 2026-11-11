@@ -234,10 +234,12 @@ class QuantumChannel:
             }
 
         elif isinstance(self.attack, FuchsPeresBrandtProbe):
-            # For FuchsPeresBrandtProbe, Bob must measure joint entangled state.
-            # BB84Engine directly constructs the joint circuit.
+            # For FuchsPeresBrandtProbe, Bob measures carrier qubit from joint entangled state.
             attack_res = self.attack.intercept_pulses(circuits)
-            received = attack_res.probed_circuits
+            if is_noisy:
+                received = self.apply_channel_transit_noise(attack_res.probed_circuits)
+            else:
+                received = attack_res.probed_circuits
             metadata = {
                 "theta_E": attack_res.theta_E,
                 "theoretical_disturbance": attack_res.theoretical_disturbance,

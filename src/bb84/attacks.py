@@ -13,11 +13,15 @@ This module implements physical eavesdropping strategies against the BB84 protoc
 2. Fuchs-Peres-Brandt Entangling Unitary Probe:
    - Parameterized by coupling angle theta_E in [0.0, pi / 2].
    - Carrier qubit q0 couples with Eve's probe ancilla q1 via a 2-qubit entangling unitary U_E(theta_E):
-     U_E |00> = cos(theta_E) |00> + sin(theta_E) |11>
-     U_E |10> = cos(theta_E) |10> + sin(theta_E) |01>
+     In physical carrier-first basis |A, E> (|carrier, ancilla>):
+       U_E |0>_A |0>_E = cos(theta_E) |0>_A |0>_E + sin(theta_E) |1>_A |1>_E
+       U_E |1>_A |0>_E = cos(theta_E) |1>_A |0>_E - sin(theta_E) |0>_A |1>_E
+     In Qiskit register basis |q1, q0> (|ancilla, carrier>):
+       U_E |00>_EA = cos(theta_E) |00>_EA + sin(theta_E) |11>_EA
+       U_E |01>_EA = cos(theta_E) |01>_EA - sin(theta_E) |10>_EA
    - Unitarity: U_E^\dagger U_E = I_4.
    - Bob's induced disturbance: D(theta_E) = sin^2(theta_E) across all BB84 states.
-   - Eve's mutual information: I_AE(theta_E) = 1 - h_2((1 + sin(2 * theta_E)) / 2).
+   - Analytical theoretical mutual information objective (4-state FPB optimal probe): I_AE(theta_E) = 1 - h_2((1 + sin(2 * theta_E)) / 2).
 
 Compatible with Qiskit 2.6.0, Qiskit Aer 0.18.0, NumPy 2.4.6, SciPy 1.17.1.
 """
@@ -411,8 +415,14 @@ def build_probe_unitary(theta_E: float) -> np.ndarray:
     - q1: Ancilla probe qubit (Eve's probe initialized in |0>).
 
     Joint Transformation (for ancilla input |0>_E):
-        U_E |0>_A |0>_E = cos(theta_E) |0>_A |0>_E + sin(theta_E) |1>_A |1>_E
-        U_E |1>_A |0>_E = sin(theta_E) |0>_A |1>_E + cos(theta_E) |1>_A |0>_E
+        In physical carrier-first basis |A, E> (|carrier, ancilla>):
+            U_E |0>_A |0>_E = cos(theta_E) |0>_A |0>_E + sin(theta_E) |1>_A |1>_E
+            U_E |1>_A |0>_E = cos(theta_E) |1>_A |0>_E - sin(theta_E) |0>_A |1>_E
+        In Qiskit register basis |q1, q0> (|ancilla, carrier> in {|00>, |01>, |10>, |11>}):
+            Col 0 (input |00>_EA):  cos(theta_E) |00>_EA + sin(theta_E) |11>_EA
+            Col 1 (input |01>_EA):  cos(theta_E) |01>_EA - sin(theta_E) |10>_EA
+            Col 2 (input |10>_EA):  cos(theta_E) |10>_EA + sin(theta_E) |01>_EA
+            Col 3 (input |11>_EA):  cos(theta_E) |11>_EA - sin(theta_E) |00>_EA
 
     In matrix form:
         U_E = [
@@ -444,7 +454,7 @@ class FuchsPeresBrandtProbe(BaseAttack):
     Eve attaches an ancillary probe qubit |0>_E to Alice's carrier qubit |psi>_A
     via a 2-qubit entangling unitary U_E(theta_E):
         U_E(theta_E) |0>_A |0>_E = cos(theta_E) |0>_A |0>_E + sin(theta_E) |1>_A |1>_E
-        U_E(theta_E) |1>_A |0>_E = sin(theta_E) |0>_A |1>_E + cos(theta_E) |1>_A |0>_E
+        U_E(theta_E) |1>_A |0>_E = cos(theta_E) |1>_A |0>_E - sin(theta_E) |0>_A |1>_E
 
     Properties:
     - Carrier q0 is forwarded to Bob (who measures in basis x_B).
@@ -505,8 +515,25 @@ class FuchsPeresBrandtProbe(BaseAttack):
     def theoretical_information_gain(self) -> float:
         """Compute Eve's theoretical mutual information I_AE(theta_E).
 
-        Formula:
-            I_AE(theta_E) = 1 - h_2((1 + sin(2 * theta_E)) / 2)
+        Theoretical Derivation & Scope:
+            This formula evaluates the analytical theoretical mutual information objective for
+            the symmetric Fuchs-Peres-Brandt optimal probe in a 4-dimensional (2-qubit) ancilla
+            space under post-sifting Helstrom state discrimination:
+                I_AE(theta_E) = 1 - h_2((1 + sin(2 * theta_E)) / 2)
+            where sin(2 * theta_E) = 2 * sqrt(D * (1 - D)) for disturbance D = sin^2(theta_E).
+            It represents an analytical theoretical objective under optimal probe and delayed-
+            measurement assumptions (not a universal upper bound across arbitrary unconstrained
+            attacks).
+
+            Distinction from 2-Qubit Physical Circuit Simulation:
+            In the 2-qubit circuit implementation (1 carrier + 1 ancilla), the unitary
+            acts on the carrier as a coherent Y-error channel with D = sin^2(theta_E).
+            The 1-qubit ancilla state is identical across all four BB84 states:
+                rho_E = cos^2(theta_E) |0><0| + sin^2(theta_E) |1><1|
+            and serves strictly as an error herald (|0>=no error, |1>=error) with zero
+            physically accessible mutual information (I_phys = 0.0). This method provides the
+            analytical theoretical proxy quantity used by the cGAN objective and benchmark
+            scoring corresponding to the selected disturbance angle theta_E.
         """
         p_succ = float((1.0 + np.sin(2.0 * self.theta_E)) / 2.0)
         return float(max(0.0, 1.0 - binary_entropy(p_succ)))

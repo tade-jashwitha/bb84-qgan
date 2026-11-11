@@ -290,11 +290,11 @@ class BB84Engine:
                 qc = QuantumCircuit(2, 1, name=f"probe_meas_{i}")
                 # Compose Alice's carrier preparation onto qubit 0
                 qc.compose(alice_circuits[i], [0], inplace=True)
-                # If channel is noisy, apply transit noise to carrier qubit 0
+                # Entangle carrier q0 with Eve's probe ancilla q1 (Eve attacks before transit)
+                qc.append(gate, [0, 1])
+                # If channel is noisy, apply transit noise to carrier qubit 0 (during transit to Bob)
                 if is_noisy:
                     qc.id(0)
-                # Entangle carrier q0 with Eve's probe ancilla q1
-                qc.append(gate, [0, 1])
 
                 # Bob's measurement on carrier qubit 0
                 if bob_bases[i] == BASIS_X:
