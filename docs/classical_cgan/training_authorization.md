@@ -74,10 +74,10 @@ graph TD
 
 ### Multi-Candidate Pareto Preservation
 To prevent forcing an unsupported single scalar score when checkpoints exhibit distinct physical trade-offs, the trainer preserves the empirical **Pareto-Optimal Checkpoints**:
-- `checkpoints/milestone4a/cgan_m4a_lexicographic_best.pt`: Highest mean mutual information $\bar{I}_{\text{feas}}$ among all checkpoints passing the 80% feasibility gate.
-- `checkpoints/milestone4a/cgan_m4a_max_feasibility.pt`: Highest overall feasibility yield $Y_{\text{feas}}$ (with secondary preference for non-zero $I_{AE}$).
-- `checkpoints/milestone4a/cgan_m4a_balanced_pareto.pt`: Best compromise on the empirical Pareto frontier maximizing $Y_{\text{feas}} \times \bar{I}_{\text{feas}}$.
-- `checkpoints/milestone4a/cgan_m4a_latest.pt`: Final state at Epoch 200.
+- `checkpoints/classical_cgan/cgan_m4a_lexicographic_best.pt`: Highest mean mutual information $\bar{I}_{\text{feas}}$ among all checkpoints passing the 80% feasibility gate.
+- `checkpoints/classical_cgan/cgan_m4a_max_feasibility.pt`: Highest overall feasibility yield $Y_{\text{feas}}$ (with secondary preference for non-zero $I_{AE}$).
+- `checkpoints/classical_cgan/cgan_m4a_balanced_pareto.pt`: Best compromise on the empirical Pareto frontier maximizing $Y_{\text{feas}} \times \bar{I}_{\text{feas}}$.
+- `checkpoints/classical_cgan/cgan_m4a_latest.pt`: Final state at Epoch 200.
 
 ---
 
@@ -218,7 +218,7 @@ train_loader = DataLoader(train_ds, batch_size=64, sampler=sampler)
 
 ## 9. Main Repository Regression Test Suite Results
 
-Following implementation of the lexicographic and Pareto checkpoint runner in `experiments/train_milestone4a.py`, the test suites were executed:
+Following implementation of the lexicographic and Pareto checkpoint runner in `experiments/train_classical_cgan.py`, the test suites were executed:
 
 ### Targeted cGAN Pipeline Suite (`tests/test_cgan_pipeline.py`)
 ```
@@ -263,7 +263,7 @@ All scientific issues raised in the audit have been resolved:
 
 ### Final Stop Condition
 In strict adherence to instructions:
-- `experiments/train_milestone4a.py` has **NOT** been executed.
+- `experiments/train_classical_cgan.py` has **NOT** been executed.
 - Zero training epochs have been run.
 - Baseline benchmarks have **NOT** been launched.
 - Test conditions $C21$–$C24$ remain **strictly quarantined**.

@@ -304,7 +304,9 @@ def run_comprehensive_benchmark(
 ) -> Dict[str, Any]:
     """Execute complete comparative benchmark across all 4 methods and held-out test conditions."""
     if checkpoint_path is None:
-        m4a_best = "checkpoints/milestone4a/cgan_m4a_lexicographic_best.pt"
+        cgan_best = "checkpoints/classical_cgan/cgan_m4a_lexicographic_best.pt"
+        legacy_best = "checkpoints/milestone4a/cgan_m4a_lexicographic_best.pt"
+        m4a_best = cgan_best if os.path.exists(cgan_best) else legacy_best
         checkpoint_path = m4a_best if os.path.exists(m4a_best) else "checkpoints/cgan_best.pt"
 
     print("=" * 80)

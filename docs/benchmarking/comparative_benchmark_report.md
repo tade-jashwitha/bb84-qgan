@@ -1,12 +1,12 @@
 # M4A COMPARATIVE BENCHMARK REPORT: FOUR-METHOD BASELINE EVALUATION ACROSS HELD-OUT TEST CONDITIONS
 
-**Project:** Adaptive QGAN-Based Eavesdropping in BB84 QKD: Resource-Constrained Conditional Quantum Generative Approach under NISQ Noise  
-**Working Repository:** `C:\Users\lenovo\bb84-qgan-research` (Primary Repository)  
-**Execution Timestamp:** 2026-11-11T02:21:31 UTC  
-**Evaluated Checkpoint:** `checkpoints/milestone4a/cgan_m4a_lexicographic_best.pt` (Epoch 150)  
-**Test Partition:** Strictly Held-Out Test Conditions (C21, C22, C23, C24) across 5 Frozen Evaluation Seeds (901–905)  
-**Total Simulation Budget:** 4 Methods $\times$ 4 Conditions $\times$ 5 Seeds $\times$ 16 Queries = 1,280 Forward Physical Simulations  
-**Status:** BENCHMARK COMPLETED — FULL RIGOROUS EMPIRICAL AUDIT  
+**Project:** Adaptive QGAN-Based Eavesdropping in BB84 QKD: Resource-Constrained Conditional Quantum Generative Approach under NISQ Noise
+**Working Repository:** `C:\Users\lenovo\bb84-qgan-research` (Primary Repository)
+**Execution Timestamp:** 2026-11-11T02:21:31 UTC
+**Evaluated Checkpoint:** `checkpoints/classical_cgan/cgan_m4a_lexicographic_best.pt` (Epoch 150)
+**Test Partition:** Strictly Held-Out Test Conditions (C21, C22, C23, C24) across 5 Frozen Evaluation Seeds (901–905)
+**Total Simulation Budget:** 4 Methods $\times$ 4 Conditions $\times$ 5 Seeds $\times$ 16 Queries = 1,280 Forward Physical Simulations
+**Status:** BENCHMARK COMPLETED — FULL RIGOROUS EMPIRICAL AUDIT
 
 ---
 
@@ -18,12 +18,12 @@ The official four-method comparative baseline benchmark has concluded. The evalu
 ==========================================================================================
 M3 STAGE C: BENCHMARK COMPARISON TABLE (Held-out Test Conditions, K=16 Queries)
 ==========================================================================================
-Method                       | I(A;E) Mean ± Std  | Abort Rate  | Feasibility | Case A/B/C  
+Method                       | I(A;E) Mean ± Std  | Abort Rate  | Feasibility | Case A/B/C
 ------------------------------------------------------------------------------------------
-cGAN_Policy_Engine           | 0.0451 ± 0.0280    | 0.0%        | 95.0%       | 18/1/1      
-Uniform_Random_Search        | 0.0661 ± 0.0683    | 0.0%        | 85.0%       | 14/3/3      
-Deterministic_Grid_Search    | 0.0760 ± 0.0706    | 0.0%        | 100.0%      | 19/1/0      
-Analytical_Probe_Heuristic   | 0.0861 ± 0.0712    | 0.0%        | 100.0%      | 19/1/0      
+cGAN_Policy_Engine           | 0.0451 ± 0.0280    | 0.0%        | 95.0%       | 18/1/1
+Uniform_Random_Search        | 0.0661 ± 0.0683    | 0.0%        | 85.0%       | 14/3/3
+Deterministic_Grid_Search    | 0.0760 ± 0.0706    | 0.0%        | 100.0%      | 19/1/0
+Analytical_Probe_Heuristic   | 0.0861 ± 0.0712    | 0.0%        | 100.0%      | 19/1/0
 ==========================================================================================
 ```
 
@@ -182,7 +182,7 @@ The benchmark was executed deterministically with fixed evaluation seeds ($901, 
 | Artifact | File Path | SHA-256 Checksum |
 | :--- | :--- | :--- |
 | **Benchmark Raw Data** | `results/cgan_benchmark_comparison.json` | `6E7DADBE1A6ED81C106B5FF54EBB3B80586CF1B76154329C51927B76C61B57F9` |
-| **Evaluated cGAN Checkpoint** | `checkpoints/milestone4a/cgan_m4a_lexicographic_best.pt` | `F26AEC880D4BAFAF67E22C3691B36450D9273DE2755135236010ECD4BDD2B81E` |
+| **Evaluated cGAN Checkpoint** | `checkpoints/classical_cgan/cgan_m4a_lexicographic_best.pt` | `F26AEC880D4BAFAF67E22C3691B36450D9273DE2755135236010ECD4BDD2B81E` |
 | **Research Dataset** | `results/full_training_dataset.json` | `07C03E810470B3376EB48C51C13138DCF347D915F78E911F74A81E96F27CFB80` |
 | **Preserved Pilot Best** | `checkpoints/cgan_pilot_best.pt` | `F4050379F065E9FE3106A23D746396215EBF128F52249220013B07411ED827AA` |
 

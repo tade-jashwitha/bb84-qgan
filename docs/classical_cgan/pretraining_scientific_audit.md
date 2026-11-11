@@ -41,7 +41,7 @@ $$\hat{\gamma}_{\text{noise}} = \frac{k_{\text{calib}}}{N_{\text{calib}}}$$
 
 ### 1.3 Root Cause of Historical Discrepancy ($0.0069$ and $0.0205$)
 - **Origin:** In single-qubit depolarizing channels, the orthogonal measurement bit-flip probability is theoretically $\frac{2}{3}p$. For $p = 0.01$, $\frac{2}{3}(0.01) \approx 0.00667$; for $p = 0.03$, $\frac{2}{3}(0.03) = 0.0200$. In an early draft script for counterfactual evaluation, continuous approximations ($0.0069$ and $0.0205$, accounting for slight finite-detector simulated baseline offsets) were manually assigned to local test variables.
-- **Resolution:** Line 568 of `experiments/train_milestone4a.py` has been updated to use the exact empirical calibration values $\hat{\gamma}_{\text{low}} = 0.0080$ (matching C17) and $\hat{\gamma}_{\text{med}} = 0.0120$ (matching C19). Conditioning inputs to the neural network now perfectly match the underlying dataset records.
+- **Resolution:** Line 568 of `experiments/train_classical_cgan.py` has been updated to use the exact empirical calibration values $\hat{\gamma}_{\text{low}} = 0.0080$ (matching C17) and $\hat{\gamma}_{\text{med}} = 0.0120$ (matching C19). Conditioning inputs to the neural network now perfectly match the underlying dataset records.
 
 ---
 
@@ -81,7 +81,7 @@ The policy feasibility category is rigorously partitioned as follows:
 - **Strictly Infeasible:** $Q_{\text{LCB}} > Q_{\text{budget}}$.
 
 > [!IMPORTANT]
-> **Strict Feasibility Invariant:** In `experiments/train_milestone4a.py` (lines 476–486), indeterminate policies increment `indeterminate_count` and are **strictly excluded** from `feasible_count` and `feasibility_yield`. They are never rewarded with mutual information credit.
+> **Strict Feasibility Invariant:** In `experiments/train_classical_cgan.py` (lines 476–486), indeterminate policies increment `indeterminate_count` and are **strictly excluded** from `feasible_count` and `feasibility_yield`. They are never rewarded with mutual information credit.
 
 ### 2.3 Operational Abort vs. Statistical Feasibility
 A protocol abort occurs when the observed point QBER on the test sample strictly exceeds the budget ($\hat{Q}_{\text{test}} > Q_{\text{budget}}$), triggering classical alarm mechanisms in Alice and Bob.
@@ -216,7 +216,7 @@ F4050379F065E9FE3106A23D746396215EBF128F52249220013B07411ED827AA  checkpoints/cg
 0BAA0DBD0BE0FB4D75E752AFD2EB1E86045CBCDFB4D1468DA27B0A2BF618E1D5  checkpoints/cgan_pilot_latest.pt
 
 Training & Test Source Modules:
-9064A963AAC646B56F4F0B87E4E9F9AE701678E11FD6F05BFC45F14444453754  experiments/train_milestone4a.py
+9064A963AAC646B56F4F0B87E4E9F9AE701678E11FD6F05BFC45F14444453754  experiments/train_classical_cgan.py
 07AB5E9838E3B44353425F7F2106672EFA83F416DE8288CF06F8CA5950173CDF  tests/test_cgan_pipeline.py
 ```
 
@@ -245,5 +245,5 @@ Every scientific and engineering requirement specified in the audit directives h
 - **Regression Suite:** 148/148 tests passing with full test quarantine of C21–C24.
 
 **FINAL STATUS: FULL TRAINING READY.**  
-*Per strict protocol, all training processes remain halted awaiting explicit user authorization to execute `experiments/train_milestone4a.py`.*
+*Per strict protocol, all training processes remain halted awaiting explicit user authorization to execute `experiments/train_classical_cgan.py`.*
 

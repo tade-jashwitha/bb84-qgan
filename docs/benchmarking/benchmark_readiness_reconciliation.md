@@ -9,7 +9,7 @@
 
 ## 1. EXECUTIVE SUMMARY
 
-Following the successful completion of Milestone 4A (200-epoch classical conditional GAN training) and the prior scientific audit (`docs/M4A_FINAL_SCIENTIFIC_AUDIT_REPORT.md`), this document provides a rigorous, read-only reconciliation of four specific scientific and technical points required prior to commencing the official four-method comparative baseline benchmark:
+Following the successful completion of Milestone 4A (200-epoch classical conditional GAN training) and the prior scientific audit (`docs/scientific_audit.md`), this document provides a rigorous, read-only reconciliation of four specific scientific and technical points required prior to commencing the official four-method comparative baseline benchmark:
 
 1. **Pilot Checkpoint Cryptographic Reconciliation:** Independent SHA-256 verification of `checkpoints/cgan_pilot_best.pt` against the initial Git baseline manifest, resolving prior draft notation discrepancies.
 2. **Four-Method Benchmark Suite Confirmation:** Full verification that `experiments/benchmark_baselines.py` strictly implements the approved protocol (Conditional GAN, Uniform Random Search, Deterministic Grid Search, and Analytical Probe Heuristic) with zero unapproved heuristic substitutions.
@@ -31,23 +31,23 @@ The SHA-256 checksum of `checkpoints/cgan_pilot_best.pt` was calculated independ
   ```
 
 ### 2.2 Comparison with Initial Git Baseline Manifest
-In `docs/INITIAL_GIT_BASELINE_MANIFEST.md` (committed at commit `23148a4`), Section 2 line 32 records:
+In `docs/git_baseline_manifest.md` (committed at commit `23148a4`), Section 2 line 32 records:
 ```text
 | `checkpoints/cgan_pilot_best.pt` | Historical Pilot Best Checkpoint (Epoch 16) | F4050379F065E9FE3106A23D746396215EBF128F52249220013B07411ED827AA | VERIFIED MATCH |
 ```
 The calculated hash matches the initial baseline manifest **byte-for-byte with 100.0% precision**.
 
 ### 2.3 Resolution of Audit Notation Discrepancy
-In `docs/M4A_FINAL_SCIENTIFIC_AUDIT_REPORT.md`:
+In `docs/scientific_audit.md`:
 - Section 7.1 accurately reports the **newly generated Milestone 4A Lexicographic Best Checkpoint**:
-  - `checkpoints/milestone4a/cgan_m4a_lexicographic_best.pt` $\implies$ `F26AEC880D4BAFAF67E22C3691B36450D9273DE2755135236010ECD4BDD2B81E` (Epoch 150, 431,644 bytes).
+  - `checkpoints/classical_cgan/cgan_m4a_lexicographic_best.pt` $\implies$ `F26AEC880D4BAFAF67E22C3691B36450D9273DE2755135236010ECD4BDD2B81E` (Epoch 150, 431,644 bytes).
 - Section 7.2 accurately confirms the preservation of the **historical pilot checkpoints**:
   - `checkpoints/cgan_pilot_best.pt` $\implies$ `F4050379F065E9FE3106A23D746396215EBF128F52249220013B07411ED827AA` (**UNCHANGED**).
   - `checkpoints/cgan_pilot_latest.pt` $\implies$ `0BAA0DBD0BE0FB4D75E752AFD2EB1E86045CBCDFB4D1468DA27B0A2BF618E1D5` (**UNCHANGED**).
 
 **Provenance & Resolution:**
 During intermediate conversational drafting, transient confusion arose regarding whether `checkpoints/cgan_pilot_best.pt` had been overwritten by the M4A training runner. We definitively confirm:
-1. `experiments/train_milestone4a.py` writes all checkpoints strictly to `checkpoints/milestone4a/` and never writes to `checkpoints/`.
+1. `experiments/train_classical_cgan.py` writes all checkpoints strictly to `checkpoints/classical_cgan/` and never writes to `checkpoints/`.
 2. The historical pilot checkpoint `checkpoints/cgan_pilot_best.pt` has remained completely untouched throughout repository consolidation, Git commit, bug fixes, and full 200-epoch training.
 3. Its authoritative hash remains permanently: `F4050379F065E9FE3106A23D746396215EBF128F52249220013B07411ED827AA`.
 
@@ -109,7 +109,7 @@ This is implemented identically in:
 - `src/dataset/schema.py` line 92: `theoretical_disturbance: float`
 
 ### 4.2 Disambiguation of Audit Text Formula
-In `docs/M4A_FINAL_SCIENTIFIC_AUDIT_REPORT.md` (Section 4.1, line 109), the explanatory text noted:
+In `docs/scientific_audit.md` (Section 4.1, line 109), the explanatory text noted:
 > *"In BB84, Bob's observed QBER is $Q \approx \gamma_{\text{noise}} + d_E$, where for Unitary Probe $d_E = \frac{1}{2}\sin^2(2\theta_E)$."*
 
 This formula ($d_E = \frac{1}{2}\sin^2(2\theta_E)$) corresponds to a standard asymmetric CNOT probe (or probe with interaction Hamiltonian $H = \theta \sigma_y \otimes \sigma_x$), where errors are zero in the $Z$ basis and occur with probability $\sin^2(2\theta)$ in the $X$ basis, averaging to $\frac{1}{2}\sin^2(2\theta)$ across sifted pulses.
@@ -139,7 +139,7 @@ Evaluating the two formulas at $\theta_E = 6^\circ$:
 Milestone 4A was executed directly on the local GPU environment:
 - **Hardware:** `NVIDIA GeForce RTX 3050 6GB Laptop GPU` (Compute Capability 8.6).
 - **Software Stack:** CUDA 12.1, PyTorch 2.5.1+cu121, Python 3.11.9 (Windows 11 AMD64).
-- **Initialization Check:** `experiments/train_milestone4a.py` line 102 initializes:
+- **Initialization Check:** `experiments/train_classical_cgan.py` line 102 initializes:
   ```python
   self.device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
   ```
@@ -152,7 +152,7 @@ Milestone 4A was executed directly on the local GPU environment:
   This assertion ran across all 200 epochs without triggering, confirming that all tensor forward passes, loss evaluations, and backpropagation gradients executed natively on the CUDA device.
 - **Log Confirmation:**
   - `task-2703.log`: `Device: cuda | PyTorch: 2.5.1+cu121 | Seed: 42`
-  - `results/milestone4a/cgan_m4a_training_history.json`: `"device": "cuda"`
+  - `results/classical_cgan/cgan_m4a_training_history.json`: `"device": "cuda"`
 
 ### 5.2 Distinguishing Allocated VRAM from GPU Compute (SM) Utilization
 The telemetry logs recorded two distinct hardware profiles:
@@ -214,9 +214,9 @@ Every critical file in the research repository `C:\Users\lenovo\bb84-qgan-resear
 | `results/full_training_dataset.json` | Full Training Dataset (1,152 records) | 2,228,503 B | `07C03E810470B3376EB48C51C13138DCF347D915F78E911F74A81E96F27CFB80` | **VERIFIED MATCH** |
 | `checkpoints/cgan_pilot_best.pt` | Preserved Pilot Best Checkpoint | 383,688 B | `F4050379F065E9FE3106A23D746396215EBF128F52249220013B07411ED827AA` | **VERIFIED MATCH** |
 | `checkpoints/cgan_pilot_latest.pt` | Preserved Pilot Latest Checkpoint | 384,856 B | `0BAA0DBD0BE0FB4D75E752AFD2EB1E86045CBCDFB4D1468DA27B0A2BF618E1D5` | **VERIFIED MATCH** |
-| `checkpoints/milestone4a/cgan_m4a_lexicographic_best.pt` | Milestone 4A Best Checkpoint (Epoch 150) | 431,644 B | `F26AEC880D4BAFAF67E22C3691B36450D9273DE2755135236010ECD4BDD2B81E` | **VERIFIED MATCH** |
-| `checkpoints/milestone4a/cgan_m4a_max_feasibility.pt` | Max Feasibility Checkpoint (Epoch 10) | 418,830 B | `46CA1E95F85081803897137CF5BC89AE056176CA52E9AA136E005B0DD42D684E` | **VERIFIED MATCH** |
-| `checkpoints/milestone4a/cgan_m4a_latest.pt` | M4A Final Epoch 200 Checkpoint | 446,564 B | `EAA397B01131B3710D687D66ACA8788F1F6C08BD8B048D06FAE85870E5435B0C` | **VERIFIED MATCH** |
+| `checkpoints/classical_cgan/cgan_m4a_lexicographic_best.pt` | Milestone 4A Best Checkpoint (Epoch 150) | 431,644 B | `F26AEC880D4BAFAF67E22C3691B36450D9273DE2755135236010ECD4BDD2B81E` | **VERIFIED MATCH** |
+| `checkpoints/classical_cgan/cgan_m4a_max_feasibility.pt` | Max Feasibility Checkpoint (Epoch 10) | 418,830 B | `46CA1E95F85081803897137CF5BC89AE056176CA52E9AA136E005B0DD42D684E` | **VERIFIED MATCH** |
+| `checkpoints/classical_cgan/cgan_m4a_latest.pt` | M4A Final Epoch 200 Checkpoint | 446,564 B | `EAA397B01131B3710D687D66ACA8788F1F6C08BD8B048D06FAE85870E5435B0C` | **VERIFIED MATCH** |
 
 ---
 
@@ -238,5 +238,5 @@ Set-Location "C:\Users\lenovo\bb84-qgan-research"
 python experiments/benchmark_baselines.py
 ```
 
-*(Note: If evaluating `checkpoints/milestone4a/cgan_m4a_lexicographic_best.pt` directly, pass `--checkpoint checkpoints/milestone4a/cgan_m4a_lexicographic_best.pt` or verify the default argument).*
+*(Note: If evaluating `checkpoints/classical_cgan/cgan_m4a_lexicographic_best.pt` directly, pass `--checkpoint checkpoints/classical_cgan/cgan_m4a_lexicographic_best.pt` or verify the default argument).*
 

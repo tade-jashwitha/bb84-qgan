@@ -23,7 +23,7 @@ In accordance with strict authorization controls, a comprehensive, read-only arc
 
 ## 2. TASK 1: VERIFIED TRAINING CONFIGURATION
 
-All values in the table below have been extracted directly from the frozen codebase (`experiments/train_milestone4a.py`, `src/cgan/models.py`, `src/cgan/dataset.py`):
+All values in the table below have been extracted directly from the frozen codebase (`experiments/train_classical_cgan.py`, `src/cgan/models.py`, `src/cgan/dataset.py`):
 
 | Parameter / Dimension | Verified Value in Code | Source File & Reference | Scientific / Engineering Rationale |
 | :--- | :--- | :--- | :--- |
@@ -58,7 +58,7 @@ All values in the table below have been extracted directly from the frozen codeb
 
 ## 3. TASK 2: VERIFIED CHECKPOINT SELECTION LOGIC
 
-The checkpoint selection implementation in [`experiments/train_milestone4a.py`](file:///C:/Users/lenovo/.gemini/antigravity/worktrees/bb84-qgan-research/nisq_noise_modelling/experiments/train_milestone4a.py#L626-L745) was inspected and verified line-by-line.
+The checkpoint selection implementation in [`experiments/train_classical_cgan.py`](file:///C:/Users/lenovo/bb84-qgan-research/experiments/train_classical_cgan.py#L626-L745) was inspected and verified line-by-line.
 
 ### 3.1 Lexicographic Qualified Checkpoint (`cgan_m4a_lexicographic_best.pt`)
 - **Qualification Rule:**
@@ -94,7 +94,7 @@ In addition to the lexicographic primary model, four dedicated anchor models are
 ### 3.3 True Non-Dominated Pareto Frontier Handling
 - Maintained online in `self.pareto_frontier` via `update_pareto_frontier()`.
 - Candidate $A = (Y_A, I_A)$ enters the frontier if no existing candidate $B$ satisfies $(Y_B \ge Y_A \land I_B \ge I_A)$ with at least one strict inequality.
-- Serialized in full into `results/milestone4a/cgan_m4a_training_history.json` under `metadata.pareto_frontier`.
+- Serialized in full into `results/classical_cgan/cgan_m4a_training_history.json` under `metadata.pareto_frontier`.
 
 ### 3.4 Zero-Feasible Policies Edge Case
 If all candidates produce zero feasible policies ($Y_{\text{feas}} = 0.0$):
@@ -130,7 +130,7 @@ If all candidates produce zero feasible policies ($Y_{\text{feas}} = 0.0$):
    - BCE Minimax Loss                - Zero Abort Hard Gate              - Zero Checkpoints
 ```
 
-1. **Condition-Level Disjointness:** Confirmed by assertions at [`train_milestone4a.py#L988-L989`](file:///C:/Users/lenovo/.gemini/antigravity/worktrees/bb84-qgan-research/nisq_noise_modelling/experiments/train_milestone4a.py#L988-L989):
+1. **Condition-Level Disjointness:** Confirmed by assertions at [`train_milestone4a.py#L988-L989`](file:///C:/Users/lenovo/bb84-qgan-research/experiments/train_classical_cgan.py#L988-L989):
    - $\text{Conditions}_{\text{train}} \cap \text{Conditions}_{\text{test}} = \emptyset$
    - $\text{Conditions}_{\text{val}} \cap \text{Conditions}_{\text{test}} = \emptyset$
 2. **Mutual Information Boundary:**
@@ -149,7 +149,7 @@ If all candidates produce zero feasible policies ($Y_{\text{feas}} = 0.0$):
 ### 5.1 Exact Execution Command
 When authorization is granted, the exact command to execute from the workspace directory is:
 ```powershell
-python experiments/train_milestone4a.py --execute
+python experiments/train_classical_cgan.py --execute
 ```
 *(Running without `--execute` prints a safety prompt and exits immediately without running training).*
 
@@ -174,7 +174,7 @@ python experiments/train_milestone4a.py --execute
 
 ### 5.4 Recovery and Artifact Isolation
 - **Interruption Recovery:** Model weights, optimizer states, epoch counter, and history are written atomically at each validation interval.
-- **Safety from Overwrite:** Checkpoints are stored in `checkpoints/milestone4a/`, leaving historical pilot checkpoints in `checkpoints/` completely untouched.
+- **Safety from Overwrite:** Checkpoints are stored in `checkpoints/classical_cgan/`, leaving historical pilot checkpoints in `checkpoints/` completely untouched.
 
 ---
 
@@ -184,11 +184,11 @@ All requested verification files have been created in the workspace:
 
 | File Path | Description | SHA-256 Hash |
 | :--- | :--- | :--- |
-| [`results/milestone4a/frozen_training_config.json`](file:///C:/Users/lenovo/.gemini/antigravity/worktrees/bb84-qgan-research/nisq_noise_modelling/results/milestone4a/frozen_training_config.json) | Complete frozen hyperparameters and model architectures | `3ABAFBEC362576EBFA999FFDC0481CB5F2B60E5E499A6B7365CF47CB293D08F2` |
-| [`results/milestone4a/checkpoint_selection_verification.json`](file:///C:/Users/lenovo/.gemini/antigravity/worktrees/bb84-qgan-research/nisq_noise_modelling/results/milestone4a/checkpoint_selection_verification.json) | Formal specification of lexicographic, anchor, and Pareto rules | `77350B92A1C5DE25DC00850F255917EDAB49EA3197E8F3C2D576420A29DA3B6C` |
-| [`results/milestone4a/data_isolation_verification.json`](file:///C:/Users/lenovo/.gemini/antigravity/worktrees/bb84-qgan-research/nisq_noise_modelling/results/milestone4a/data_isolation_verification.json) | Disjointness proofs, test quarantine, and MI objective isolation | `32D25AEF8DFFB3D4C837B20AA6C9C6132621DF2F8C6542349C3353F17FC1AEE1` |
-| [`results/milestone4a/execution_estimate.json`](file:///C:/Users/lenovo/.gemini/antigravity/worktrees/bb84-qgan-research/nisq_noise_modelling/results/milestone4a/execution_estimate.json) | Resource estimates, runtime breakdown, and failure recovery specs | `2AF3E6ED4BAC268EC98DA40329ABF4D91080737804A54C7230C5146A226793E7` |
-| [`docs/M4A_FINAL_EXECUTION_AUTHORIZATION_REVIEW.md`](file:///C:/Users/lenovo/.gemini/antigravity/worktrees/bb84-qgan-research/nisq_noise_modelling/docs/M4A_FINAL_EXECUTION_AUTHORIZATION_REVIEW.md) | Full executive authorization document (workspace copy) | `61730BBD1624C4CAFEA11B45465C029EB88F281EBCBD18C1D06C1FEF7C5696E0` |
+| [`results/classical_cgan/frozen_training_config.json`](file:///C:/Users/lenovo/bb84-qgan-research/results/classical_cgan/frozen_training_config.json) | Complete frozen hyperparameters and model architectures | `3ABAFBEC362576EBFA999FFDC0481CB5F2B60E5E499A6B7365CF47CB293D08F2` |
+| [`results/classical_cgan/checkpoint_selection_verification.json`](file:///C:/Users/lenovo/bb84-qgan-research/results/classical_cgan/checkpoint_selection_verification.json) | Formal specification of lexicographic, anchor, and Pareto rules | `77350B92A1C5DE25DC00850F255917EDAB49EA3197E8F3C2D576420A29DA3B6C` |
+| [`results/classical_cgan/data_isolation_verification.json`](file:///C:/Users/lenovo/bb84-qgan-research/results/classical_cgan/data_isolation_verification.json) | Disjointness proofs, test quarantine, and MI objective isolation | `32D25AEF8DFFB3D4C837B20AA6C9C6132621DF2F8C6542349C3353F17FC1AEE1` |
+| [`results/classical_cgan/execution_estimate.json`](file:///C:/Users/lenovo/bb84-qgan-research/results/classical_cgan/execution_estimate.json) | Resource estimates, runtime breakdown, and failure recovery specs | `2AF3E6ED4BAC268EC98DA40329ABF4D91080737804A54C7230C5146A226793E7` |
+| [`docs/classical_cgan/execution_authorization_review.md`](file:///C:/Users/lenovo/bb84-qgan-research/docs/classical_cgan/execution_authorization_review.md) | Full executive authorization document (workspace copy) | `61730BBD1624C4CAFEA11B45465C029EB88F281EBCBD18C1D06C1FEF7C5696E0` |
 
 ---
 
@@ -198,7 +198,7 @@ All requested verification files have been created in the workspace:
 2. **Unresolved Risks:** **NONE.** No memory, stability, data leakage, or numerical risks remain unresolved.
 3. **Exact Execution Command:**
    ```powershell
-   python experiments/train_milestone4a.py --execute
+   python experiments/train_classical_cgan.py --execute
    ```
 4. **Estimated Runtime & Storage:** **130 seconds ($\approx 2.2$ minutes)** | **$< 7.0\text{ MB}$ disk** | **$< 512\text{ MB}$ GPU VRAM**.
 5. **Formal Recommendation:** **READY FOR AUTHORIZATION.**

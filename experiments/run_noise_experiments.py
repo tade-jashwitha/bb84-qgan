@@ -643,7 +643,7 @@ def main():
         "experiment_5_noise_and_eavesdropping": exp5_res,
     }
 
-    json_path = os.path.join(output_dir, "milestone2_experimental_results.json")
+    json_path = os.path.join(output_dir, "quantum_noise_results.json")
     with open(json_path, "w") as f:
         json.dump(all_results, f, indent=2)
 

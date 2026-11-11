@@ -362,7 +362,7 @@ def main():
         "experiment_5_unitary_probe": exp5_res,
     }
 
-    json_path = os.path.join(output_dir, "milestone1b_experimental_results.json")
+    json_path = os.path.join(output_dir, "bb84_simulation_results.json")
     with open(json_path, "w") as f:
         json.dump(all_results, f, indent=2)
 

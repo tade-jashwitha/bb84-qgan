@@ -145,11 +145,11 @@ All produced model checkpoints and historical artifacts have been verified:
 
 | Checkpoint File | Epoch | Size | SHA-256 Hash |
 | :--- | :---: | :---: | :--- |
-| `checkpoints/milestone4a/cgan_m4a_lexicographic_best.pt` | 150 | 421.5 KB | `F26AEC880D4BAFAF67E22C3691B36450D9273DE2755135236010ECD4BDD2B81E` |
-| `checkpoints/milestone4a/cgan_m4a_max_feasibility.pt` | 10 | 409.0 KB | `46CA1E95F85081803897137CF5BC89AE056176CA52E9AA136E005B0DD42D684E` |
-| `checkpoints/milestone4a/cgan_m4a_max_information.pt` | 150 | 421.3 KB | `E22287A188F3B4443245F5C5D0560C3D4B79F41838FD4868455360A2A7F755BC` |
-| `checkpoints/milestone4a/cgan_m4a_balanced_pareto.pt` | 150 | 421.3 KB | `32CCC15CC2EA49856DEB055EC6B5FF0DA186B6DD1306031D1244F0C2D142A8CD` |
-| `checkpoints/milestone4a/cgan_m4a_latest.pt` | 200 | 436.1 KB | `EAA397B01131B3710D687D66ACA8788F1F6C08BD8B048D06FAE85870E5435B0C` |
+| `checkpoints/classical_cgan/cgan_m4a_lexicographic_best.pt` | 150 | 421.5 KB | `F26AEC880D4BAFAF67E22C3691B36450D9273DE2755135236010ECD4BDD2B81E` |
+| `checkpoints/classical_cgan/cgan_m4a_max_feasibility.pt` | 10 | 409.0 KB | `46CA1E95F85081803897137CF5BC89AE056176CA52E9AA136E005B0DD42D684E` |
+| `checkpoints/classical_cgan/cgan_m4a_max_information.pt` | 150 | 421.3 KB | `E22287A188F3B4443245F5C5D0560C3D4B79F41838FD4868455360A2A7F755BC` |
+| `checkpoints/classical_cgan/cgan_m4a_balanced_pareto.pt` | 150 | 421.3 KB | `32CCC15CC2EA49856DEB055EC6B5FF0DA186B6DD1306031D1244F0C2D142A8CD` |
+| `checkpoints/classical_cgan/cgan_m4a_latest.pt` | 200 | 436.1 KB | `EAA397B01131B3710D687D66ACA8788F1F6C08BD8B048D06FAE85870E5435B0C` |
 
 ### Preservation of Historical Research Baseline Artifacts:
 - Canonical Dataset (`results/full_training_dataset.json`): `07C03E810470B3376EB48C51C13138DCF347D915F78E911F74A81E96F27CFB80` (**UNCHANGED**)

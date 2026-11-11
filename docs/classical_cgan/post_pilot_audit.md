@@ -62,7 +62,7 @@ $$I_{AE}(\theta_E) = 1 - h_2\left(\frac{1 + \sin(2\theta_E)}{2}\right)$$
 ### Root Cause of Discrepancy
 The discrepancy originated as a **documentation transcription error**:
 - The code implementation in `src/cgan/models.py`, `src/cgan/dataset.py`, and `src/cgan/policy_engine.py` was implemented strictly for $[0, \pi/4]$ from day one.
-- However, Table 5 of `M3_STAGE_C_PILOT_TRAINING_REPORT.md` (and the initial engineering plan) transcribed the parameter bounds from `src/bb84/attacks.py` where `FuchsPeresBrandtProbe` is documented with mathematical operator bounds $[0, \pi/2]$.
+- However, Table 5 of `pilot_training_report.md` (and the initial engineering plan) transcribed the parameter bounds from `src/bb84/attacks.py` where `FuchsPeresBrandtProbe` is documented with mathematical operator bounds $[0, \pi/2]$.
 - Additionally, `instantiate_attack` in `src/dataset/policy_generator.py` permitted up to $\pi/2$.
 
 ### Code Corrections Implemented

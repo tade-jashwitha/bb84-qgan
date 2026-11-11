@@ -143,7 +143,7 @@ To ensure rigorous scientific integrity, we adhere to strict audit criteria:
 2. **Full 64-Character SHA-256 Hashes:** All file hashes are reported in full 64-character hexadecimal format (no truncation).
 3. **Baseline Snapshot Availability:** 
    - The initial repository `C:\Users\lenovo\bb84-qgan-research` was initialized with `git init` but contains zero prior commits (`On branch master, No commits yet`). No external `.git` commit tree, git tags, or standalone backup tarball/zip archives exist on disk.
-   - For files whose full creation content or pre-Stage-B state was explicitly recorded in the immutable execution transcript prior to Stage B (e.g. `MILESTONE_2_REPORT.md` at Step 395, and `tests/test_attacks.py` at Step 395), an independent baseline snapshot exists and is compared directly.
+   - For files whose full creation content or pre-Stage-B state was explicitly recorded in the immutable execution transcript prior to Stage B (e.g. `quantum_noise_models.md` at Step 395, and `tests/test_attacks.py` at Step 395), an independent baseline snapshot exists and is compared directly.
    - For all files lacking an independent external baseline snapshot, they are explicitly classified as **`UNVERIFIED`** in the integrity table below.
    - In addition, an internal cross-tree verification between the main repository (`C:\Users\lenovo\bb84-qgan-research`) and the worktree workspace (`C:\Users\lenovo\.gemini\antigravity\worktrees\bb84-qgan-research\nisq_noise_modelling`) confirms that current SHA-256 hashes are bit-for-bit identical across all 29 files.
 
@@ -161,8 +161,8 @@ To ensure rigorous scientific integrity, we adhere to strict audit criteria:
 | `tests/test_bob.py` | None located | N/A (No external snapshot) | `3d9c326f93b3933e06d095f9aa34ba1e66c857da34161e8989e871cae0e69fc4` | **UNVERIFIED** |
 | `tests/test_bb84_engine.py` | None located | N/A (No external snapshot) | `33f2d3a1a6edfbb928dac27201cd0e21ad6ac2f7a577b81b1ccacd5e0257dc84` | **UNVERIFIED** |
 | `tests/test_attacks.py` | Pre-Stage-B Snapshot (Transcript Step 395) | `c73d9946726dd227d545df19eedf58a96e33edde0f01b158c1cb1a39688b88d0` | `7729b99eca7a836322bbbbecc596162bd9fecf3934f4bb67cd2317f696751c02` | **MODIFIED (Approved)** |
-| `experiments/run_milestone1b_experiments.py` | None located | N/A (No external snapshot) | `9e5bd40512fa277cf7be99afd00ebf545406794b22db1da7596b7db8322a6d4f` | **UNVERIFIED** |
-| `results/milestone1b_experimental_results.json` | None located | N/A (No external snapshot) | `b12791244759a4c5ec7c2d154c538e75ae7fa4dd6d3dd6dacdbe268adcacff6d` | **UNVERIFIED** |
+| `experiments/run_bb84_simulation.py` | None located | N/A (No external snapshot) | `9e5bd40512fa277cf7be99afd00ebf545406794b22db1da7596b7db8322a6d4f` | **UNVERIFIED** |
+| `results/bb84_simulation_results.json` | None located | N/A (No external snapshot) | `b12791244759a4c5ec7c2d154c538e75ae7fa4dd6d3dd6dacdbe268adcacff6d` | **UNVERIFIED** |
 | `results/exp3_partial_intercept_resend.png` | None located | N/A (No external snapshot) | `70405c1681acd167d9e220afd2e1aad1323f124064d6affadd430e0858df6718` | **UNVERIFIED** |
 | `results/exp4_basis_bias_analysis.png` | None located | N/A (No external snapshot) | `120bb8cb9bba339748cb39dbe21dbe973ad6025709941db8461819cf87dede09` | **UNVERIFIED** |
 | `results/exp5_unitary_probe_tradeoff.png` | None located | N/A (No external snapshot) | `2de326fdf9550b56a8bad992118c0482986e712896db46f310d21c7a489f97c4` | **UNVERIFIED** |
@@ -170,16 +170,16 @@ To ensure rigorous scientific integrity, we adhere to strict audit criteria:
 | `src/channel/__init__.py` | None located | N/A (No external snapshot) | `954fbe9abffcb70ea68771f1ddacc1524e94fe1a5d3ce2ebbe930a9a185ed7de` | **UNVERIFIED** |
 | `tests/test_noise_models.py` | None located | N/A (No external snapshot) | `0389c43c21bedc15436c12e8b4cda280b3cfc45d42a2437da8094fa81994b872` | **UNVERIFIED** |
 | `tests/test_noisy_channel.py` | None located | N/A (No external snapshot) | `02723f77946d3afad4086b8edf5bd6524f5620fce6ea4c7a9f82b52fd7136406` | **UNVERIFIED** |
-| `experiments/run_milestone2_experiments.py` | None located | N/A (No external snapshot) | `21bd03b88663c5c5b66b235f4277a1c92e8892e81a9fc49abdfb7f0ec6e295fd` | **UNVERIFIED** |
-| `results/milestone2_experimental_results.json` | None located | N/A (No external snapshot) | `91097112ebd60669063152e567f89f1c8fe09cab3b84592ae0257f7bcbed6a68` | **UNVERIFIED** |
+| `experiments/run_noise_experiments.py` | None located | N/A (No external snapshot) | `21bd03b88663c5c5b66b235f4277a1c92e8892e81a9fc49abdfb7f0ec6e295fd` | **UNVERIFIED** |
+| `results/quantum_noise_results.json` | None located | N/A (No external snapshot) | `91097112ebd60669063152e567f89f1c8fe09cab3b84592ae0257f7bcbed6a68` | **UNVERIFIED** |
 | `results/exp1_depolarizing_sweep.png` | None located | N/A (No external snapshot) | `cb52904fe92b85570ce199b55c1322a342a2eaf575a3156874a8378b2b52a6f2` | **UNVERIFIED** |
 | `results/exp2_amplitude_damping_sweep.png` | None located | N/A (No external snapshot) | `3168d52fcc7b2a8e60e63afa91ec918fcb6d434bad18974b29cd05556af44766` | **UNVERIFIED** |
 | `results/exp3_phase_damping_sweep.png` | None located | N/A (No external snapshot) | `08112a9c06466a5701f7130051cc94b714c2646560abfd25176c3e7d97f1694f` | **UNVERIFIED** |
 | `results/exp4_thermal_relaxation.png` | None located | N/A (No external snapshot) | `beccfcd247b20062ecd4591cca717921ed2afd2085f5cf865732e38f1e3f6cc3` | **UNVERIFIED** |
 | `results/exp5_noise_vs_eavesdropping.png` | None located | N/A (No external snapshot) | `c3a4c1535925468c9b2d480d5647acc6562010b634efcea986843abb02178467` | **UNVERIFIED** |
-| `MILESTONE_2_REPORT.md` | Pre-Stage-B Snapshot (Transcript Step 395) | `4773751f3d16ad632ad6d3241ce59cc5d9168b23eb9b2b1ecdcd1d464e249f10` | `4773751f3d16ad632ad6d3241ce59cc5d9168b23eb9b2b1ecdcd1d464e249f10` | **MATCH** |
-| `FINAL_REPORT.md` | None located | N/A (No external snapshot) | `568d939c145930e6a3090071d20df91dd9aeeb7f2f6a34bb687355737d48ef02` | **UNVERIFIED** |
-| `qkd_cqgan_engineering_plan.md` | None located | N/A (No external snapshot) | `46469e37725416c4780ad6e9646aaa6787154af8af4458ee042c41abb08af84b` | **UNVERIFIED** |
+| `quantum_noise_models.md` | Pre-Stage-B Snapshot (Transcript Step 395) | `4773751f3d16ad632ad6d3241ce59cc5d9168b23eb9b2b1ecdcd1d464e249f10` | `4773751f3d16ad632ad6d3241ce59cc5d9168b23eb9b2b1ecdcd1d464e249f10` | **MATCH** |
+| `final_report.md` | None located | N/A (No external snapshot) | `568d939c145930e6a3090071d20df91dd9aeeb7f2f6a34bb687355737d48ef02` | **UNVERIFIED** |
+| `engineering_plan.md` | None located | N/A (No external snapshot) | `46469e37725416c4780ad6e9646aaa6787154af8af4458ee042c41abb08af84b` | **UNVERIFIED** |
 
 *Note on `tests/test_attacks.py`:* The only modification between the baseline snapshot and the current version is the addition of `seed_simulator=101` and `seed_simulator=102` on lines 54 and 64, which was the required fix under Task 1 to eliminate unseeded Qiskit Aer measurement entropy.
 

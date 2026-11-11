@@ -9,14 +9,14 @@
 ## 1. DIAGNOSTIC ROOT-CAUSE ANALYSIS
 
 ### 1.1 The Failure
-During initialization of `Milestone4ATrainer` in `experiments/train_milestone4a.py`, execution failed with:
+During initialization of `Milestone4ATrainer` in `experiments/train_classical_cgan.py`, execution failed with:
 ```text
 RuntimeError: Expected a 'cuda' device type for generator but found 'cpu'
 ```
 
 ### 1.2 Inspection of Random Generator Calls
 A systematic audit across all files in `experiments/`, `src/cgan/`, and `src/bb84/` was conducted:
-1. **Lines 128 & 138 of `experiments/train_milestone4a.py`:**
+1. **Lines 128 & 138 of `experiments/train_classical_cgan.py`:**
    - Previous code:
      ```python
      latent_gen = torch.Generator().manual_seed(seed + 999)
@@ -38,7 +38,7 @@ A systematic audit across all files in `experiments/`, `src/cgan/`, and `src/bb8
      )
      ```
    - **Root Cause:** In PyTorch, `torch.Generator()` without arguments initializes on `device='cpu'`. When `device=self.device` (where `self.device` is `cuda:0` on the NVIDIA RTX 3050 Laptop GPU) was passed to `torch.randn(...)`, PyTorch strictly checked that `generator.device == tensor.device` and raised a `RuntimeError`.
-2. **Other `torch.randn` calls in `experiments/train_milestone4a.py`:**
+2. **Other `torch.randn` calls in `experiments/train_classical_cgan.py`:**
    - Lines 251, 274, 334: `z = torch.randn(b_size, self.generator.latent_dim, device=self.device, dtype=torch.float32)`
    - These calls use PyTorch's default generator for `self.device` (which was seeded on CUDA via `torch.cuda.manual_seed_all(seed)` at line 124). No explicit generator mismatch exists.
 3. **`src/cgan/models.py` & `src/cgan/trainer.py`:**
@@ -48,7 +48,7 @@ A systematic audit across all files in `experiments/`, `src/cgan/`, and `src/bb8
 
 ## 2. APPLIED FIX
 
-In accordance with the approved CUDA specification, `experiments/train_milestone4a.py` was updated at lines 128 and 138 to explicitly bind the random generators to `self.device`:
+In accordance with the approved CUDA specification, `experiments/train_classical_cgan.py` was updated at lines 128 and 138 to explicitly bind the random generators to `self.device`:
 
 ```python
         # Fixed validation latents for exact reproducibility across epochs
@@ -105,7 +105,7 @@ A standalone initialization smoke test was executed directly on the RTX 3050 GPU
 | `results/full_training_dataset.json` | UNMODIFIED | `07C03E810470B3376EB48C51C13138DCF347D915F78E911F74A81E96F27CFB80` |
 | `checkpoints/cgan_pilot_best.pt` | UNMODIFIED | `F4050379F065E9FE3106A23D746396215EBF128F52249220013B07411ED827AA` |
 | `checkpoints/cgan_pilot_latest.pt` | UNMODIFIED | `0BAA0DBD0BE0FB4D75E752AFD2EB1E86045CBCDFB4D1468DA27B0A2BF618E1D5` |
-| `experiments/train_milestone4a.py` | MODIFIED (fix) | `D8DCECEB31F9F80A94A57C886A35BF0348632E3E2693502E7E404AA2E517F8DE` |
+| `experiments/train_classical_cgan.py` | MODIFIED (fix) | `D8DCECEB31F9F80A94A57C886A35BF0348632E3E2693502E7E404AA2E517F8DE` |
 | `tests/test_cgan_pipeline.py` | MODIFIED (test) | `7698E968FE842BB088222C04BE7C67FA4362208A19F85DA98C061783CCEC1CA6` |
 | **Git Baseline Commit HEAD** | PRESERVED | `23148a4956c2c1975d940f14fd064eaa3a9cb7ad` |
 

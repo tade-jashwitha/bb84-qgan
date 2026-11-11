@@ -91,8 +91,8 @@ class Milestone4ATrainer:
         tau_0: float = 1.0,
         tau_min: float = 0.20,
         tau_decay: float = 0.985,
-        checkpoint_dir: str = "checkpoints/milestone4a",
-        results_dir: str = "results/milestone4a",
+        checkpoint_dir: str = "checkpoints/classical_cgan",
+        results_dir: str = "results/classical_cgan",
         seed: int = 42,
         eval_physical_interval: int = 10,
         num_candidates_eval: int = 16,
@@ -951,8 +951,8 @@ class Milestone4ATrainer:
 
 def run_milestone4a_training(
     dataset_path: str = "results/full_training_dataset.json",
-    checkpoint_dir: str = "checkpoints/milestone4a",
-    results_dir: str = "results/milestone4a",
+    checkpoint_dir: str = "checkpoints/classical_cgan",
+    results_dir: str = "results/classical_cgan",
     epochs: int = 200,
     batch_size: int = 64,
     lr_g: float = 2e-4,

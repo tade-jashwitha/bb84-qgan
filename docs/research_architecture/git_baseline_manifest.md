@@ -37,7 +37,7 @@ All critical research assets were re-verified post-commit to confirm byte-for-by
 | `src/cgan/dataset.py` | Dataset loader & Wilson score filter | `98ADACCFD70A3A923E8B3AA5A30069BB3A9BC6F0EF62640E9DF72D644B8CF157` | **VERIFIED MATCH** |
 | `src/cgan/trainer.py` | cGAN training loop & loss functions | `FF160CEF08B60BB9ADCB49C1A9A3D3B4DEFACC5E2201BE7524BD897276CB5AB4` | **VERIFIED MATCH** |
 | `src/cgan/policy_engine.py` | Policy generation & Fallback Tri-Case | `62449A136124E853D9CB855B1CA314B76A2A3BD16134A5D0B2355BE802724CE5` | **VERIFIED MATCH** |
-| `experiments/train_milestone4a.py` | Authoritative 200-epoch training runner | `BA5787A8D4A24BA32358CD1B6B0A7C1A89A570466EBDD838D193052038B9F0B7` | **VERIFIED MATCH** |
+| `experiments/train_classical_cgan.py` | Authoritative 200-epoch training runner | `BA5787A8D4A24BA32358CD1B6B0A7C1A89A570466EBDD838D193052038B9F0B7` | **VERIFIED MATCH** |
 | `tests/test_cgan_pipeline.py` | 24 unit tests including CRN channel coupling | `724A5A78D2217B08761ADC1C04D3BE126102A3AA546C1FC308B42C5B12213EAA` | **VERIFIED MATCH** |
 | `.gitignore` | Project git ignore rules | `8749BF42B4F6498AF571CAD151BCA123B868BD5C8F0F5857E3564C55B2912458` | **VERIFIED MATCH** |
 
@@ -82,7 +82,7 @@ The `.gitignore` configuration successfully prevented all ephemeral, build, and 
 - `experiments/audit_full_dataset.py` (12.7 KB), `audit_pilot.py` (6.3 KB), `audit_pilot_provenance.py` (7.7 KB)
 - `experiments/benchmark_baselines.py` (17.2 KB)
 - `experiments/generate_full_dataset.py` (9.8 KB), `generate_pilot_dataset.py` (10.2 KB), `generate_pilot_provenance_dataset.py` (653 B)
-- `experiments/run_milestone1b_experiments.py` (16.2 KB), `run_milestone2_experiments.py` (26.7 KB)
+- `experiments/run_bb84_simulation.py` (16.2 KB), `run_milestone2_experiments.py` (26.7 KB)
 - `experiments/train_cgan.py` (7.2 KB), `train_cgan_pilot.py` (15.0 KB), `train_milestone4a.py` (45.4 KB)
 
 ### 5.4 Model Checkpoints (`checkpoints/` — 4 files, 1.47 MB)
@@ -96,21 +96,21 @@ The `.gitignore` configuration successfully prevented all ephemeral, build, and 
 - `results/full_dataset_benchmark_metrics.json` (1.9 KB), `pilot_benchmark_metrics.json` (2.3 KB), `pilot_benchmark_metrics_provenance.json` (2.3 KB)
 
 ### 5.6 Validation Results & Logs (`results/` — 6 files, 39.5 KB)
-- `results/milestone1b_experimental_results.json` (7.5 KB), `milestone2_experimental_results.json` (21.0 KB)
-- `results/milestone4a/checkpoint_selection_verification.json` (3.4 KB), `data_isolation_verification.json` (2.3 KB)
-- `results/milestone4a/execution_estimate.json` (2.6 KB), `frozen_training_config.json` (2.6 KB)
+- `results/bb84_simulation_results.json` (7.5 KB), `milestone2_experimental_results.json` (21.0 KB)
+- `results/classical_cgan/checkpoint_selection_verification.json` (3.4 KB), `data_isolation_verification.json` (2.3 KB)
+- `results/classical_cgan/execution_estimate.json` (2.6 KB), `frozen_training_config.json` (2.6 KB)
 
 ### 5.7 Generated Sweep Figures (`results/` — 8 files, 1.54 MB)
 - `results/exp1_depolarizing_sweep.png` through `exp5_unitary_probe_tradeoff.png` (8 figures)
 
 ### 5.8 Documentation & Reports (17 files, 335.5 KB)
-- `FINAL_REPORT.md`, `M3_STAGE_A_REVISED_REPORT.md`, `M3_STAGE_B_FINAL_ACCEPTANCE_REPORT.md`
-- `M3_STAGE_C_PILOT_TRAINING_REPORT.md`, `M3_STAGE_C_POST_PILOT_AUDIT_REPORT.md`, `M3_STAGE_C_TRAINING_READINESS_REPORT.md`
-- `M3_STAGE_C_FINAL_PRETRAINING_AUDIT_REPORT.md`, `M3_STAGE_C_FINAL_TRAINING_AUTHORIZATION_REPORT.md`
-- `MILESTONE_2_REPORT.md`, `PILOT_VALIDATION_REPORT.md`, `qkd_cqgan_engineering_plan.md`
-- `docs/INITIAL_GIT_BASELINE_MANIFEST.md`, `docs/M3_STAGE_C_FINAL_CLOSURE_REPORT.md`
-- `docs/M3_STAGE_C_FINAL_PRETRAINING_AUDIT_REPORT.md`, `docs/M4A_FINAL_EXECUTION_AUTHORIZATION_REVIEW.md`
-- `docs/REPOSITORY_CONSOLIDATION_REPORT.md`, `docs/migration_log.json`
+- `final_report.md`, `architecture_design.md`, `dataset_acceptance_report.md`
+- `pilot_training_report.md`, `post_pilot_audit.md`, `training_readiness.md`
+- `pretraining_scientific_audit.md`, `training_authorization.md`
+- `quantum_noise_models.md`, `pilot_dataset_validation.md`, `engineering_plan.md`
+- `docs/git_baseline_manifest.md`, `docs/crn_and_baseline_closure.md`
+- `docs/pretraining_scientific_audit.md`, `docs/execution_authorization_review.md`
+- `docs/repository_consolidation.md`, `docs/migration_log.json`
 
 ### 5.9 Repository Configuration (1 file, 288 B)
 - `.gitignore` (288 B)

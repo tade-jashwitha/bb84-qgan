@@ -241,7 +241,7 @@ python -m unittest discover -s tests -p "test_*.py"
 ```
 
 In addition:
-- Default checkpoint in `run_comprehensive_benchmark` now automatically detects `checkpoints/milestone4a/cgan_m4a_lexicographic_best.pt`.
+- Default checkpoint in `run_comprehensive_benchmark` now automatically detects `checkpoints/classical_cgan/cgan_m4a_lexicographic_best.pt`.
 - Added standard CLI arguments `--checkpoint` and `--output` to `experiments/benchmark_baselines.py`.
 
 ### 8.2 Cryptographic Artifact Verification:
@@ -251,9 +251,9 @@ In addition:
 | `results/full_training_dataset.json` | 1,152-record research dataset | `07C03E810470B3376EB48C51C13138DCF347D915F78E911F74A81E96F27CFB80` | **UNMODIFIED** |
 | `checkpoints/cgan_pilot_best.pt` | Preserved pilot best checkpoint | `F4050379F065E9FE3106A23D746396215EBF128F52249220013B07411ED827AA` | **UNMODIFIED** |
 | `checkpoints/cgan_pilot_latest.pt` | Preserved pilot latest checkpoint | `0BAA0DBD0BE0FB4D75E752AFD2EB1E86045CBCDFB4D1468DA27B0A2BF618E1D5` | **UNMODIFIED** |
-| `checkpoints/milestone4a/cgan_m4a_lexicographic_best.pt` | M4A Best Checkpoint (Epoch 150) | `F26AEC880D4BAFAF67E22C3691B36450D9273DE2755135236010ECD4BDD2B81E` | **UNMODIFIED** |
-| `checkpoints/milestone4a/cgan_m4a_max_feasibility.pt` | Max Feasibility Checkpoint (Epoch 10) | `46CA1E95F85081803897137CF5BC89AE056176CA52E9AA136E005B0DD42D684E` | **UNMODIFIED** |
-| `checkpoints/milestone4a/cgan_m4a_latest.pt` | Final Epoch 200 State | `EAA397B01131B3710D687D66ACA8788F1F6C08BD8B048D06FAE85870E5435B0C` | **UNMODIFIED** |
+| `checkpoints/classical_cgan/cgan_m4a_lexicographic_best.pt` | M4A Best Checkpoint (Epoch 150) | `F26AEC880D4BAFAF67E22C3691B36450D9273DE2755135236010ECD4BDD2B81E` | **UNMODIFIED** |
+| `checkpoints/classical_cgan/cgan_m4a_max_feasibility.pt` | Max Feasibility Checkpoint (Epoch 10) | `46CA1E95F85081803897137CF5BC89AE056176CA52E9AA136E005B0DD42D684E` | **UNMODIFIED** |
+| `checkpoints/classical_cgan/cgan_m4a_latest.pt` | Final Epoch 200 State | `EAA397B01131B3710D687D66ACA8788F1F6C08BD8B048D06FAE85870E5435B0C` | **UNMODIFIED** |
 
 ---
 

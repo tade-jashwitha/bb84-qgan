@@ -123,12 +123,12 @@ The following 56 files are prepared for the initial baseline commit. No files ha
 - `tests/test_dataset_pipeline.py`, `test_noise_models.py`, `test_noisy_channel.py`
 
 #### 3. Experiment Runners & Verification (`experiments/`):
-- `experiments/train_milestone4a.py` (Authoritative 200-epoch runner)
+- `experiments/train_classical_cgan.py` (Authoritative 200-epoch runner)
 - `experiments/train_cgan_pilot.py`, `experiments/train_cgan.py`
 - `experiments/benchmark_baselines.py`
 - `experiments/audit_full_dataset.py`, `audit_pilot.py`, `audit_pilot_provenance.py`
 - `experiments/generate_full_dataset.py`, `generate_pilot_dataset.py`, `generate_pilot_provenance_dataset.py`
-- `experiments/run_milestone1b_experiments.py`, `run_milestone2_experiments.py`
+- `experiments/run_bb84_simulation.py`, `run_milestone2_experiments.py`
 
 #### 4. Historical Checkpoints & Datasets (`checkpoints/` & `results/`):
 - `checkpoints/cgan_pilot_best.pt` (Epoch 16 historical best, SHA-256: `F405...`)
@@ -137,15 +137,15 @@ The following 56 files are prepared for the initial baseline commit. No files ha
 - `results/full_training_dataset.json` (1,152 records, SHA-256: `07C0...`)
 - `results/pilot_dataset.json`, `pilot_dataset_provenance.json`
 - `results/cgan_pilot_training_history.json`, `cgan_pilot_validation_evaluation.json`
-- `results/milestone4a/frozen_training_config.json`, `checkpoint_selection_verification.json`, `data_isolation_verification.json`, `execution_estimate.json`
-- `results/milestone1b_experimental_results.json`, `milestone2_experimental_results.json`
+- `results/classical_cgan/frozen_training_config.json`, `checkpoint_selection_verification.json`, `data_isolation_verification.json`, `execution_estimate.json`
+- `results/bb84_simulation_results.json`, `milestone2_experimental_results.json`
 - `results/exp1` through `exp5` validation sweep figures
 
 #### 5. Documentation & Engineering Plans:
 - `.gitignore`
-- `qkd_cqgan_engineering_plan.md`
-- Root Reports: `FINAL_REPORT.md`, `M3_STAGE_A_REVISED_REPORT.md`, `M3_STAGE_B_FINAL_ACCEPTANCE_REPORT.md`, `M3_STAGE_C_PILOT_TRAINING_REPORT.md`, `M3_STAGE_C_POST_PILOT_AUDIT_REPORT.md`, `M3_STAGE_C_TRAINING_READINESS_REPORT.md`, `M3_STAGE_C_FINAL_PRETRAINING_AUDIT_REPORT.md`, `M3_STAGE_C_FINAL_TRAINING_AUTHORIZATION_REPORT.md`, `MILESTONE_2_REPORT.md`, `PILOT_VALIDATION_REPORT.md`
-- `docs/REPOSITORY_CONSOLIDATION_REPORT.md`, `M4A_FINAL_EXECUTION_AUTHORIZATION_REVIEW.md`, `M3_STAGE_C_FINAL_CLOSURE_REPORT.md`
+- `engineering_plan.md`
+- Root Reports: `final_report.md`, `architecture_design.md`, `dataset_acceptance_report.md`, `pilot_training_report.md`, `post_pilot_audit.md`, `training_readiness.md`, `pretraining_scientific_audit.md`, `training_authorization.md`, `quantum_noise_models.md`, `pilot_dataset_validation.md`
+- `docs/repository_consolidation.md`, `execution_authorization_review.md`, `crn_and_baseline_closure.md`
 
 ---
 

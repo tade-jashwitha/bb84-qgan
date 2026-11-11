@@ -32,7 +32,7 @@ All noise mechanisms have been implemented in `src/channel/noise_models.py`, int
 A critical pre-implementation audit was conducted on the Fuchs-Peres-Brandt probe results from Milestone 1B:
 - **Historical Report Text:** Mentioned $P_{\text{error}} = \sin^2(\theta_E)$.
 - **Code Function in `src/bb84/attacks.py`:** Defined $D(\theta_E) = \frac{1}{2}\sin^2(\theta_E)$.
-- **Observed Simulation Output in `results/milestone1b_experimental_results.json`:** Produced $\text{QBER} \approx 0.147989$ at $\theta_E = \pi / 8 = 22.5^\circ$, which is approximately double $0.073223$.
+- **Observed Simulation Output in `results/bb84_simulation_results.json`:** Produced $\text{QBER} \approx 0.147989$ at $\theta_E = \pi / 8 = 22.5^\circ$, which is approximately double $0.073223$.
 
 ### 2.2 Rigorous Derivation from Reduced Density Matrices
 
@@ -86,7 +86,7 @@ This confirms that the information gain formula implemented in `attacks.py` ($p_
 1. **Root Cause:** The earlier code formula `0.5 * sin^2(theta_E)` was an analytical misattribution originating from half-angle trigonometric formulas ($\sin^2\theta = \frac{1 - \cos 2\theta}{2}$) or asymmetric coupling models.
 2. **Probe Circuit Integrity:** The quantum circuit and unitary matrix implementation in `attacks.py` was already physically exact and was left untouched.
 3. **Correction:** The theoretical method `FuchsPeresBrandtProbe.theoretical_disturbance()` in `src/bb84/attacks.py` was updated to return $\sin^2(\theta_E)$, unifying analytical predictions and empirical simulation results.
-4. **Milestone 1 Historical Preservation:** Milestone 1B JSON artifacts in `results/milestone1b_experimental_results.json` remain unmodified as historical records.
+4. **Milestone 1 Historical Preservation:** Milestone 1B JSON artifacts in `results/bb84_simulation_results.json` remain unmodified as historical records.
 
 ---
 
@@ -247,7 +247,7 @@ A critical design requirement is that channel noise must act strictly on the opt
 
 ## 5. Experimental Results & Verification
 
-All five experiments were executed using the dedicated harness `experiments/run_milestone2_experiments.py` with results archived in `results/milestone2_experimental_results.json`.
+All five experiments were executed using the dedicated harness `experiments/run_noise_experiments.py` with results archived in `results/quantum_noise_results.json`.
 
 ### Experiment 1: Depolarizing Noise Sweep
 

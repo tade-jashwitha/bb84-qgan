@@ -30,11 +30,11 @@ Earlier audit transcripts contained instances where `git status` exited with cod
      No commits yet
      Untracked files:
        (use "git add <file>..." to include in what will be committed)
-         FINAL_REPORT.md, M3_STAGE_A_REVISED_REPORT.md, M3_STAGE_B_FINAL_ACCEPTANCE_REPORT.md,
-         M3_STAGE_C_FINAL_PRETRAINING_AUDIT_REPORT.md, M3_STAGE_C_FINAL_TRAINING_AUTHORIZATION_REPORT.md,
-         M3_STAGE_C_PILOT_TRAINING_REPORT.md, M3_STAGE_C_POST_PILOT_AUDIT_REPORT.md,
-         M3_STAGE_C_TRAINING_READINESS_REPORT.md, MILESTONE_2_REPORT.md, PILOT_VALIDATION_REPORT.md,
-         checkpoints/, docs/, experiments/, qkd_cqgan_engineering_plan.md, results/, scratch/, src/, tests/
+         final_report.md, architecture_design.md, dataset_acceptance_report.md,
+         pretraining_scientific_audit.md, training_authorization.md,
+         pilot_training_report.md, post_pilot_audit.md,
+         training_readiness.md, quantum_noise_models.md, pilot_dataset_validation.md,
+         checkpoints/, docs/, experiments/, engineering_plan.md, results/, scratch/, src/, tests/
      nothing added to commit but untracked files present
      ```
    - **Conclusion:** The primary repository's Git structure is healthy, non-divergent, and contains all necessary files staged/untracked for future commits. No `.git` recreation was needed or performed.
@@ -52,10 +52,10 @@ Every critical research artifact was recalculated via SHA-256 directly on the di
 | `checkpoints/cgan_pilot_latest.pt` | `0BAA0DBD0BE0FB4D75E752AFD2EB1E86045CBCDFB4D1468DA27B0A2BF618E1D5` | `0BAA0DBD0BE0FB4D75E752AFD2EB1E86045CBCDFB4D1468DA27B0A2BF618E1D5` | **VERIFIED (100% Match)** |
 | `src/cgan/models.py` | `E1B5B4E7A602C55568B73309B62F2D94C44EED27DD4FD94DD264F60791908033` | `E1B5B4E7A602C55568B73309B62F2D94C44EED27DD4FD94DD264F60791908033` | **VERIFIED (100% Match)** |
 | `src/cgan/dataset.py` | `98ADACCFD70A3A923E8B3AA5A30069BB3A9BC6F0EF62640E9DF72D644B8CF157` | `98ADACCFD70A3A923E8B3AA5A30069BB3A9BC6F0EF62640E9DF72D644B8CF157` | **VERIFIED (100% Match)** |
-| `experiments/train_milestone4a.py` | `BA5787A8D4A24BA32358CD1B6B0A7C1A89A570466EBDD838D193052038B9F0B7` | `BA5787A8D4A24BA32358CD1B6B0A7C1A89A570466EBDD838D193052038B9F0B7` | **VERIFIED (100% Match)** |
+| `experiments/train_classical_cgan.py` | `BA5787A8D4A24BA32358CD1B6B0A7C1A89A570466EBDD838D193052038B9F0B7` | `BA5787A8D4A24BA32358CD1B6B0A7C1A89A570466EBDD838D193052038B9F0B7` | **VERIFIED (100% Match)** |
 | `tests/test_cgan_pipeline.py` | `07AB5E9838E3B44353425F7F2106672EFA83F416DE8288CF06F8CA5950173CDF` | `07AB5E9838E3B44353425F7F2106672EFA83F416DE8288CF06F8CA5950173CDF` | **VERIFIED (100% Match)** |
 
-All directories (`checkpoints/`, `results/`, `results/milestone4a/`, `docs/`, `experiments/`, `src/`, `tests/`, `scratch/`) exist and are populated with their verified contents.
+All directories (`checkpoints/`, `results/`, `results/classical_cgan/`, `docs/`, `experiments/`, `src/`, `tests/`, `scratch/`) exist and are populated with their verified contents.
 
 ---
 
@@ -76,7 +76,7 @@ $$k_{\text{calib}} \sim \text{Binomial}(N_{\text{calib}}, q_{\text{env}}), \quad
 
 #### Origin and Elimination of Legacy $0.0069$ and $0.0205$:
 - **Root Cause:** In single-qubit depolarizing channels, orthogonal basis measurement bit-flip probability is theoretically $\frac{2}{3}p$. For $p = 0.01$, $\frac{2}{3}(0.01) \approx 0.00667$; for $p = 0.03$, $\frac{2}{3}(0.03) = 0.0200$. In an early draft script, continuous theoretical estimates ($0.0069$ and $0.0205$, accounting for detector dark noise) were temporarily hardcoded into local counterfactual slice variables.
-- **Verification:** In [`experiments/train_milestone4a.py` (lines 568–574)](file:///C:/Users/lenovo/bb84-qgan-research/experiments/train_milestone4a.py#L568-L574), counterfactual evaluation uses the exact calibration values:
+- **Verification:** In [`experiments/train_classical_cgan.py` (lines 568–574)](file:///C:/Users/lenovo/bb84-qgan-research/experiments/train_classical_cgan.py#L568-L574), counterfactual evaluation uses the exact calibration values:
   $$\hat{\gamma}_{\text{low}} = 0.0080 \text{ (C17)}, \quad \hat{\gamma}_{\text{med}} = 0.0120 \text{ (C19)}$$
   The conditioning inputs to the generator now match the underlying dataset records with 100% fidelity.
 
@@ -139,7 +139,7 @@ Executing 4 distinct attack operators (Probe $\theta_E=0.03$, Probe $\theta_E=0.
 ---
 
 ### 3.5 Checkpoint-Selection Edge Cases & Pareto Distinction
-The implementation in [`experiments/train_milestone4a.py` (lines 626–740)](file:///C:/Users/lenovo/bb84-qgan-research/experiments/train_milestone4a.py#L626-L740) resolves all edge cases:
+The implementation in [`experiments/train_classical_cgan.py` (lines 626–740)](file:///C:/Users/lenovo/bb84-qgan-research/experiments/train_classical_cgan.py#L626-L740) resolves all edge cases:
 
 1. **Zero Eligible Checkpoints:**
    - If no checkpoint satisfies $Y_{\text{feas}} \ge 0.80$ with zero aborts, `self.lexicographic_best` remains `None`.
@@ -163,7 +163,7 @@ The implementation in [`experiments/train_milestone4a.py` (lines 626–740)](fil
    - If a generator degenerates to Null policies, `info_gains_feas` is empty $\implies \bar{I}_{\text{feas}} = 0.0$. The generator receives zero mutual information credit.
 
 #### Genuine Pareto Frontier vs. Scalar Compromise:
-- **True Non-Dominated Pareto Frontier:** Maintained online in `self.pareto_frontier`. Candidate $A = (Y_A, I_A)$ enters if no candidate $B$ satisfies $Y_B \ge Y_A \land I_B \ge I_A$ with strict inequality. Serialized in full into `results/milestone4a/cgan_m4a_training_history.json`.
+- **True Non-Dominated Pareto Frontier:** Maintained online in `self.pareto_frontier`. Candidate $A = (Y_A, I_A)$ enters if no candidate $B$ satisfies $Y_B \ge Y_A \land I_B \ge I_A$ with strict inequality. Serialized in full into `results/classical_cgan/cgan_m4a_training_history.json`.
 - **Scalar Product Compromise Checkpoint:** The single model on the trade-off surface that maximizes $S = Y_{\text{feas}} \times \bar{I}_{\text{feas}}$ is saved as `cgan_m4a_balanced_pareto.pt`.
 
 ---

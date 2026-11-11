@@ -17,7 +17,7 @@ A comprehensive, read-only scientific audit of the completed 200-epoch classical
 No retraining, hyperparameter modification, dataset modification, or checkpoint criterion alterations were executed during this audit.
 
 ### Key Audit Findings:
-1. **Checkpoint Verification:** The selected primary checkpoint [`checkpoints/milestone4a/cgan_m4a_lexicographic_best.pt`](file:///C:/Users/lenovo/bb84-qgan-research/checkpoints/milestone4a/cgan_m4a_lexicographic_best.pt) exists, loads cleanly into `ConditionalGenerator` and `ConditionalDiscriminator`, and corresponds to **Epoch 150** with SHA-256 `F26AEC880D4BAFAF67E22C3691B36450D9273DE2755135236010ECD4BDD2B81E`.
+1. **Checkpoint Verification:** The selected primary checkpoint [`checkpoints/classical_cgan/cgan_m4a_lexicographic_best.pt`](file:///C:/Users/lenovo/bb84-qgan-research/checkpoints/classical_cgan/cgan_m4a_lexicographic_best.pt) exists, loads cleanly into `ConditionalGenerator` and `ConditionalDiscriminator`, and corresponds to **Epoch 150** with SHA-256 `F26AEC880D4BAFAF67E22C3691B36450D9273DE2755135236010ECD4BDD2B81E`.
 2. **Stealth & Feasibility Metrics Confirmed:**
    - **Parameter Validity:** **100.0%** (64/64 candidates strictly obey $[0, \pi/4]$ probe bounds and $[0, 1]$ PIR bounds).
    - **Observed Aborts:** **Exactly 0 aborts (0.0%)** across all 64 validation queries on conditions C17–C20.
@@ -40,7 +40,7 @@ No retraining, hyperparameter modification, dataset modification, or checkpoint 
 
 ### 1.1 State Dict Loading & PyTorch Deserialization
 The primary lexicographic checkpoint was loaded into memory using `torch.load(..., weights_only=False)` and bound to freshly initialized models:
-- **File Path:** `checkpoints/milestone4a/cgan_m4a_lexicographic_best.pt`
+- **File Path:** `checkpoints/classical_cgan/cgan_m4a_lexicographic_best.pt`
 - **File Size:** 431,644 bytes (~421.5 KB)
 - **SHA-256 Hash:** `F26AEC880D4BAFAF67E22C3691B36450D9273DE2755135236010ECD4BDD2B81E`
 - **Contained Keys:** `['epoch', 'tag', 'metadata', 'generator_state_dict', 'discriminator_state_dict', 'optimizer_G_state_dict', 'optimizer_D_state_dict', 'history', 'config']`
@@ -48,7 +48,7 @@ The primary lexicographic checkpoint was loaded into memory using `torch.load(..
 - **Deserialization Status:** `ConditionalGenerator` and `ConditionalDiscriminator` loaded with 100% parameter key alignment, zero missing keys, and zero unexpected keys.
 
 ### 1.2 Validation Metric Reconciliation
-The metadata dictionary embedded inside `cgan_m4a_lexicographic_best.pt` was compared directly with the independent physical validation log `results/milestone4a/cgan_m4a_validation_evaluations.json` at Epoch 150:
+The metadata dictionary embedded inside `cgan_m4a_lexicographic_best.pt` was compared directly with the independent physical validation log `results/classical_cgan/cgan_m4a_validation_evaluations.json` at Epoch 150:
 
 | Metric | Embedded Checkpoint Value | Validation Log Value | Recomputed Value from Raw Records | Audit Verification |
 | :--- | :---: | :---: | :---: | :---: |
@@ -181,11 +181,11 @@ Among all 21 physical evaluation checkpoints, exactly 5 checkpoints achieved zer
 ### 7.1 Checkpoint Artifacts:
 | File | Role | Epoch | Size | SHA-256 Hash |
 | :--- | :--- | :---: | :---: | :--- |
-| `checkpoints/milestone4a/cgan_m4a_lexicographic_best.pt` | Primary Lexicographic Best | 150 | 421.5 KB | `F26AEC880D4BAFAF67E22C3691B36450D9273DE2755135236010ECD4BDD2B81E` |
-| `checkpoints/milestone4a/cgan_m4a_max_feasibility.pt` | Max Feasibility Checkpoint | 10 | 409.0 KB | `46CA1E95F85081803897137CF5BC89AE056176CA52E9AA136E005B0DD42D684E` |
-| `checkpoints/milestone4a/cgan_m4a_max_information.pt` | Max Information Checkpoint | 150 | 421.3 KB | `E22287A188F3B4443245F5C5D0560C3D4B79F41838FD4868455360A2A7F755BC` |
-| `checkpoints/milestone4a/cgan_m4a_balanced_pareto.pt` | Balanced Pareto Checkpoint | 150 | 421.3 KB | `32CCC15CC2EA49856DEB055EC6B5FF0DA186B6DD1306031D1244F0C2D142A8CD` |
-| `checkpoints/milestone4a/cgan_m4a_latest.pt` | Final Epoch 200 State | 200 | 436.1 KB | `EAA397B01131B3710D687D66ACA8788F1F6C08BD8B048D06FAE85870E5435B0C` |
+| `checkpoints/classical_cgan/cgan_m4a_lexicographic_best.pt` | Primary Lexicographic Best | 150 | 421.5 KB | `F26AEC880D4BAFAF67E22C3691B36450D9273DE2755135236010ECD4BDD2B81E` |
+| `checkpoints/classical_cgan/cgan_m4a_max_feasibility.pt` | Max Feasibility Checkpoint | 10 | 409.0 KB | `46CA1E95F85081803897137CF5BC89AE056176CA52E9AA136E005B0DD42D684E` |
+| `checkpoints/classical_cgan/cgan_m4a_max_information.pt` | Max Information Checkpoint | 150 | 421.3 KB | `E22287A188F3B4443245F5C5D0560C3D4B79F41838FD4868455360A2A7F755BC` |
+| `checkpoints/classical_cgan/cgan_m4a_balanced_pareto.pt` | Balanced Pareto Checkpoint | 150 | 421.3 KB | `32CCC15CC2EA49856DEB055EC6B5FF0DA186B6DD1306031D1244F0C2D142A8CD` |
+| `checkpoints/classical_cgan/cgan_m4a_latest.pt` | Final Epoch 200 State | 200 | 436.1 KB | `EAA397B01131B3710D687D66ACA8788F1F6C08BD8B048D06FAE85870E5435B0C` |
 
 ### 7.2 Historical Baseline Artifacts (Preservation Check):
 - `results/full_training_dataset.json` $\implies$ `07C03E810470B3376EB48C51C13138DCF347D915F78E911F74A81E96F27CFB80` (**UNCHANGED**)
@@ -226,5 +226,5 @@ The classical conditional GAN training experiment (Milestone 4A) has satisfied 1
 3. Strict preservation of historical benchmarks, dataset hashes, and test condition quarantines.
 4. 150/150 passing unit and regression tests.
 
-The Epoch 150 checkpoint (`checkpoints/milestone4a/cgan_m4a_lexicographic_best.pt`) is fully certified and ready for evaluation in the upcoming four-method comparative baseline benchmark.
+The Epoch 150 checkpoint (`checkpoints/classical_cgan/cgan_m4a_lexicographic_best.pt`) is fully certified and ready for evaluation in the upcoming four-method comparative baseline benchmark.
 
